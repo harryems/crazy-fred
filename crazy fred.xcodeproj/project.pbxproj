@@ -117,6 +117,10 @@
 		D1637C9D15F74FAD0097AFB5 /* registro.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C9C15F74FAD0097AFB5 /* registro.png */; };
 		D1637CA015F7503F0097AFB5 /* MusicLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637C9F15F7503E0097AFB5 /* MusicLayer.m */; };
 		D1637CA315F750610097AFB5 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637CA215F750600097AFB5 /* GameLayer.m */; };
+		D1637CA915F816EF0097AFB5 /* Guns.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1637CA515F816EE0097AFB5 /* Guns.mp3 */; };
+		D1637CAA15F816EF0097AFB5 /* hey girl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1637CA615F816EE0097AFB5 /* hey girl.mp3 */; };
+		D1637CAB15F816EF0097AFB5 /* red hot chilli pepper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1637CA715F816EF0097AFB5 /* red hot chilli pepper.mp3 */; };
+		D1637CAC15F816EF0097AFB5 /* ac:dc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1637CA815F816EF0097AFB5 /* ac:dc.mp3 */; };
 		D16AD7EB15F6775600F9CF19 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16AD7EA15F6775600F9CF19 /* QuartzCore.framework */; };
 		D16AD7ED15F6775600F9CF19 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16AD7EC15F6775600F9CF19 /* OpenGLES.framework */; };
 		D16AD7EF15F6775600F9CF19 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16AD7EE15F6775600F9CF19 /* OpenAL.framework */; };
@@ -340,6 +344,10 @@
 		D1637C9F15F7503E0097AFB5 /* MusicLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicLayer.m; sourceTree = "<group>"; };
 		D1637CA115F750600097AFB5 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		D1637CA215F750600097AFB5 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
+		D1637CA515F816EE0097AFB5 /* Guns.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Guns.mp3; sourceTree = "<group>"; };
+		D1637CA615F816EE0097AFB5 /* hey girl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "hey girl.mp3"; sourceTree = "<group>"; };
+		D1637CA715F816EF0097AFB5 /* red hot chilli pepper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "red hot chilli pepper.mp3"; sourceTree = "<group>"; };
+		D1637CA815F816EF0097AFB5 /* ac:dc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ac:dc.mp3"; sourceTree = "<group>"; };
 		D16AD7E615F6775600F9CF19 /* crazy fred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crazy fred.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16AD7EA15F6775600F9CF19 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D16AD7EC15F6775600F9CF19 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -750,6 +758,17 @@
 			name = registro;
 			sourceTree = "<group>";
 		};
+		D1637CA415F816B70097AFB5 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				D1637CA515F816EE0097AFB5 /* Guns.mp3 */,
+				D1637CA615F816EE0097AFB5 /* hey girl.mp3 */,
+				D1637CA715F816EF0097AFB5 /* red hot chilli pepper.mp3 */,
+				D1637CA815F816EF0097AFB5 /* ac:dc.mp3 */,
+			);
+			name = music;
+			sourceTree = "<group>";
+		};
 		D16AD7DB15F6775600F9CF19 = {
 			isa = PBXGroup;
 			children = (
@@ -808,6 +827,7 @@
 		D16AD7FB15F6775600F9CF19 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D1637CA415F816B70097AFB5 /* music */,
 				D1637C9B15F74F930097AFB5 /* registro */,
 				D1637BEE15F717E40097AFB5 /* final */,
 				D1637C0315F717E40097AFB5 /* juego */,
@@ -1292,6 +1312,10 @@
 				D1637C7915F717E50097AFB5 /* t5.png in Resources */,
 				D1637C7F15F729E70097AFB5 /* Default.png in Resources */,
 				D1637C9D15F74FAD0097AFB5 /* registro.png in Resources */,
+				D1637CA915F816EF0097AFB5 /* Guns.mp3 in Resources */,
+				D1637CAA15F816EF0097AFB5 /* hey girl.mp3 in Resources */,
+				D1637CAB15F816EF0097AFB5 /* red hot chilli pepper.mp3 in Resources */,
+				D1637CAC15F816EF0097AFB5 /* ac:dc.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

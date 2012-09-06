@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "crazy fred/InitLayer.m"
-         timestampString = "368526496.952857"
+         timestampString = "368585147.908394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,12 +21,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "crazy fred/InitLayer.m"
-         timestampString = "368527319.652965"
+         timestampString = "368585147.908394"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "76"
-         endingLineNumber = "76"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
          landmarkName = "-acceso:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "crazy fred/GameLayer.m"
+         timestampString = "368585147.908394"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
+         landmarkName = "-touchButton:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -10,6 +10,9 @@
 // Import the interfaces
 #import "InitLayer.h"
 #import "accesoLayer.h"
+#import "GameLayer.h"
+#import "MusicLayer.h"
+
 
 // InitLayer implementation
 @implementation InitLayer
@@ -89,8 +92,9 @@
      [spriteCortinasCierran runAction:animateCortinasCierran];
      [self runAction:[CCSequence actions:[CCDelayTime actionWithDuration:2], nil]];
     
-    [[CCDirector sharedDirector] replaceScene:[accesoLayer scene]];
-    
+    //[[CCDirector sharedDirector] replaceScene:[accesoLayer scene]];
+    [[CCDirector sharedDirector] replaceScene:[MusicLayer scene]];
+     
 }
 
 // on "dealloc" you need to release all your retained objects

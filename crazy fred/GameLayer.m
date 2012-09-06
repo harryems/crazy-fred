@@ -39,7 +39,29 @@
         background.position = ccp(size.width/2, size.height/2);
         [self addChild:background];
         
+
         
+        CCMenuItemImage *ba1 = [CCMenuItemImage itemFromNormalImage:@"ba1.png" selectedImage:@"be1.png" target:self selector:@selector(touchButton:)];
+        CCMenuItemImage *ba2 = [CCMenuItemImage itemFromNormalImage:@"ba2.png"  selectedImage:@"be2.png" target:self selector:@selector(touchButton:)];
+        CCMenuItemImage *ba3 = [CCMenuItemImage itemFromNormalImage:@"ba3.png"  selectedImage:@"be3.png" target:self selector:@selector(touchButton:)];
+        CCMenuItemImage *ba4 = [CCMenuItemImage itemFromNormalImage:@"ba4.png" selectedImage:@"be4.png" target:self selector:@selector(touchButton:)];
+        CCMenuItemImage *ba5 = [CCMenuItemImage itemFromNormalImage:@"ba5.png"  selectedImage:@"be5.png" target:self selector:@selector(touchButton:)];
+        CCMenuItemImage *ba6 = [CCMenuItemImage itemFromNormalImage:@"ba6.png"  selectedImage:@"be6.png" target:self selector:@selector(touchButton:)];
+        CCMenuItemImage *ba7 = [CCMenuItemImage itemFromNormalImage:@"ba7.png" selectedImage:@"be7.png" target:self selector:@selector(touchButton:)];
+        CCMenuItemImage *ba8 = [CCMenuItemImage itemFromNormalImage:@"ba8.png"  selectedImage:@"be8.png" target:self selector:@selector(touchButton:)];
+        CCMenuItemImage *ba9 = [CCMenuItemImage itemFromNormalImage:@"ba9.png"  selectedImage:@"be9.png" target:self selector:@selector(touchButton:)];
+        
+        CCMenu *Instrumentos = [CCMenu menuWithItems:ba1,ba2,ba3,ba4,ba5,ba6,ba7,ba8,ba9, nil];
+
+        [Instrumentos  alignItemsInColumns:[NSNumber numberWithInt:3], [NSNumber numberWithInt:3],[NSNumber numberWithInt:3], nil];
+        
+
+        
+        //CCMenu *row1 = [CCMenu menuWithItems:ba1,nil];
+        Instrumentos.position =CGPointMake(size.width / 2, size.height / 2);
+
+        //[row1 alignItemsHorizontallyWithPadding:1];
+        [self addChild:Instrumentos];
         
         
         
@@ -47,7 +69,10 @@
 	return self;
 }
 
+- (void) touchButton: (CCMenuItem  *) menuItem
+{
 
+} 
 
 
 // on "dealloc" you need to release all your retained objects

@@ -40,7 +40,23 @@
         background.position = ccp(size.width/2, size.height/2);
         [self addChild:background];
         
+        CCSprite *sprinteList = [CCSprite spriteWithFile:@"t1.png"];
+        [sprinteList setPosition:CGPointMake(size.width / 2,size.height/2 )];
+        [self addChild:sprinteList];
+        
+        CCAnimation *animationList = [CCAnimation animation];
+        [animationList addFrameWithFilename:@"t2.png"];
+        [animationList addFrameWithFilename:@"t3.png"];
+        [animationList addFrameWithFilename:@"t4.png"];
+        [animationList addFrameWithFilename:@"t5.png"];
 
+        
+        
+        CCAnimate *animateList = [CCAnimate actionWithDuration:0.3 animation:animationList restoreOriginalFrame:NO];
+        [sprinteList runAction:animateList];
+        
+        
+        
         
         
         

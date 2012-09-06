@@ -14,4 +14,5 @@
 }
 // returns a CCScene that contains the InitLayer as the only child
 +(CCScene *) scene;
+
 @end
