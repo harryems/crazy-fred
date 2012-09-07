@@ -43,13 +43,13 @@
  
         
 		
-        CCSprite *sprinteInicio = [CCSprite spriteWithFile:@"h1.png"];
+        CCSprite *sprinteInicio = [CCSprite spriteWithFile:@"h3.png"];
         [sprinteInicio setPosition:CGPointMake(size.width / 2, size.height / 2)];
         [self addChild:sprinteInicio];
         
         CCAnimation *animationInicio = [CCAnimation animation];
         [animationInicio addFrameWithFilename:@"h2.png"];
-        [animationInicio addFrameWithFilename:@"h3.png"];
+        [animationInicio addFrameWithFilename:@"h1.png"];
 
         
         CCAnimate *animat = [CCAnimate actionWithDuration:1 animation:animationInicio restoreOriginalFrame:NO];
@@ -94,6 +94,7 @@
     
     //[[CCDirector sharedDirector] replaceScene:[accesoLayer scene]];
     [[CCDirector sharedDirector] replaceScene:[MusicLayer scene]];
+    // [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
      
 }
 

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>flecha1</key>
+		<dict>
+			<key>spriteColorRect</key>
+			<string>{{0, 0}, {190, 190}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 0}</string>
+			<key>spriteSize</key>
+			<string>{190, 190}</string>
+			<key>spriteSourceSize</key>
+			<string>{190, 190}</string>
+			<key>spriteTrimmed</key>
+			<false/>
+			<key>textureRect</key>
+			<string>{{0, 0}, {190, 190}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>flecha2</key>
+		<dict>
+			<key>spriteColorRect</key>
+			<string>{{196, 0}, {190, 190}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 0}</string>
+			<key>spriteSize</key>
+			<string>{190, 190}</string>
+			<key>spriteSourceSize</key>
+			<string>{190, 190}</string>
+			<key>spriteTrimmed</key>
+			<false/>
+			<key>textureRect</key>
+			<string>{{196, 0}, {190, 190}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>flecha3</key>
+		<dict>
+			<key>spriteColorRect</key>
+			<string>{{390, 0}, {190, 190}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 0}</string>
+			<key>spriteSize</key>
+			<string>{190, 190}</string>
+			<key>spriteSourceSize</key>
+			<string>{190, 190}</string>
+			<key>spriteTrimmed</key>
+			<false/>
+			<key>textureRect</key>
+			<string>{{390, 0}, {190, 190}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>flecha4</key>
+		<dict>
+			<key>spriteColorRect</key>
+			<string>{{0, 196}, {190, 190}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 0}</string>
+			<key>spriteSize</key>
+			<string>{190, 190}</string>
+			<key>spriteSourceSize</key>
+			<string>{190, 190}</string>
+			<key>spriteTrimmed</key>
+			<false/>
+			<key>textureRect</key>
+			<string>{{0, 196}, {190, 190}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>flecha5</key>
+		<dict>
+			<key>spriteColorRect</key>
+			<string>{{0, 390}, {190, 190}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 0}</string>
+			<key>spriteSize</key>
+			<string>{190, 190}</string>
+			<key>spriteSourceSize</key>
+			<string>{190, 190}</string>
+			<key>spriteTrimmed</key>
+			<false/>
+			<key>textureRect</key>
+			<string>{{0, 390}, {190, 190}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>flecha6</key>
+		<dict>
+			<key>spriteColorRect</key>
+			<string>{{196, 196}, {190, 190}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 0}</string>
+			<key>spriteSize</key>
+			<string>{190, 190}</string>
+			<key>spriteSourceSize</key>
+			<string>{190, 190}</string>
+			<key>spriteTrimmed</key>
+			<false/>
+			<key>textureRect</key>
+			<string>{{196, 196}, {190, 190}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>flecha7</key>
+		<dict>
+			<key>spriteColorRect</key>
+			<string>{{390, 196}, {190, 190}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 0}</string>
+			<key>spriteSize</key>
+			<string>{190, 190}</string>
+			<key>spriteSourceSize</key>
+			<string>{190, 190}</string>
+			<key>spriteTrimmed</key>
+			<false/>
+			<key>textureRect</key>
+			<string>{{390, 196}, {190, 190}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>AnimationName</key>
+		<string>medidor</string>
+		<key>GeneratedWith</key>
+		<string>SpriteHelper</string>
+		<key>animationLoop</key>
+		<false/>
+		<key>animationRepetitions</key>
+		<integer>1</integer>
+		<key>animationSpeed</key>
+		<real>0.40000000596046448</real>
+		<key>animationStartAtLaunch</key>
+		<true/>
+		<key>format</key>
+		<integer>3</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+	</dict>
+</dict>
+</plist>

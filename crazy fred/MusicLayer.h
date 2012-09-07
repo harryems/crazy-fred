@@ -10,8 +10,10 @@
 #import "cocos2d.h"
 
 @interface MusicLayer : CCLayer {
-    
+
 }
+
+@property int CountSong;
 // returns a CCScene that contains the InitLayer as the only child
 +(CCScene *) scene;
 

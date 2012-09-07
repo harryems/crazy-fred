@@ -34,11 +34,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "crazy fred/GameLayer.m"
-         timestampString = "368585147.908394"
+         timestampString = "368743449.420485"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
+         landmarkName = "-touchButton:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "crazy fred/GameLayer.m"
+         timestampString = "368743449.420485"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
+         landmarkName = "+scene"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "crazy fred/GameLayer.m"
+         timestampString = "368744352.071427"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "95"
+         endingLineNumber = "95"
          landmarkName = "-touchButton:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -99,7 +99,7 @@
 		D1637C6A15F717E50097AFB5 /* medidor.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2515F717E50097AFB5 /* medidor.png */; };
 		D1637C6B15F717E50097AFB5 /* btnadelante-on.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2715F717E50097AFB5 /* btnadelante-on.png */; };
 		D1637C6C15F717E50097AFB5 /* btnadelante-over.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2815F717E50097AFB5 /* btnadelante-over.png */; };
-		D1637C6D15F717E50097AFB5 /* btnatras--over.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2915F717E50097AFB5 /* btnatras--over.png */; };
+		D1637C6D15F717E50097AFB5 /* btnatras-over.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2915F717E50097AFB5 /* btnatras-over.png */; };
 		D1637C6E15F717E50097AFB5 /* btnatras-on.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2A15F717E50097AFB5 /* btnatras-on.png */; };
 		D1637C6F15F717E50097AFB5 /* btnpausa-on.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2B15F717E50097AFB5 /* btnpausa-on.png */; };
 		D1637C7015F717E50097AFB5 /* btnpausa-over.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2C15F717E50097AFB5 /* btnpausa-over.png */; };
@@ -228,6 +228,11 @@
 		D16AD94E15F6775C00F9CF19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D16AD94D15F6775C00F9CF19 /* AppDelegate.m */; };
 		D16AD95115F6775C00F9CF19 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D16AD95015F6775C00F9CF19 /* RootViewController.m */; };
 		D16AD95415F6775C00F9CF19 /* InitLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D16AD95315F6775C00F9CF19 /* InitLayer.m */; };
+		D1C29BFD15FA6A01000FB7C0 /* DiscIn-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C29BF815FA6A00000FB7C0 /* DiscIn-hd.plist */; };
+		D1C29BFE15FA6A01000FB7C0 /* DiscIn-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C29BF915FA6A00000FB7C0 /* DiscIn-hd.png */; };
+		D1C29BFF15FA6A01000FB7C0 /* DiscIn.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C29BFA15FA6A00000FB7C0 /* DiscIn.plist */; };
+		D1C29C0015FA6A01000FB7C0 /* DiscIn.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C29BFB15FA6A00000FB7C0 /* DiscIn.png */; };
+		D1C29C0115FA6A01000FB7C0 /* DiscIn.pshs in Resources */ = {isa = PBXBuildFile; fileRef = D1C29BFC15FA6A00000FB7C0 /* DiscIn.pshs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -323,7 +328,7 @@
 		D1637C2515F717E50097AFB5 /* medidor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medidor.png; sourceTree = "<group>"; };
 		D1637C2715F717E50097AFB5 /* btnadelante-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnadelante-on.png"; sourceTree = "<group>"; };
 		D1637C2815F717E50097AFB5 /* btnadelante-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnadelante-over.png"; sourceTree = "<group>"; };
-		D1637C2915F717E50097AFB5 /* btnatras--over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnatras--over.png"; sourceTree = "<group>"; };
+		D1637C2915F717E50097AFB5 /* btnatras-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnatras-over.png"; sourceTree = "<group>"; };
 		D1637C2A15F717E50097AFB5 /* btnatras-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnatras-on.png"; sourceTree = "<group>"; };
 		D1637C2B15F717E50097AFB5 /* btnpausa-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnpausa-on.png"; sourceTree = "<group>"; };
 		D1637C2C15F717E50097AFB5 /* btnpausa-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnpausa-over.png"; sourceTree = "<group>"; };
@@ -575,6 +580,11 @@
 		D16AD95215F6775C00F9CF19 /* InitLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitLayer.h; sourceTree = "<group>"; };
 		D16AD95315F6775C00F9CF19 /* InitLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitLayer.m; sourceTree = "<group>"; };
 		D16AD95515F6775C00F9CF19 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		D1C29BF815FA6A00000FB7C0 /* DiscIn-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DiscIn-hd.plist"; sourceTree = "<group>"; };
+		D1C29BF915FA6A00000FB7C0 /* DiscIn-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DiscIn-hd.png"; sourceTree = "<group>"; };
+		D1C29BFA15FA6A00000FB7C0 /* DiscIn.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DiscIn.plist; sourceTree = "<group>"; };
+		D1C29BFB15FA6A00000FB7C0 /* DiscIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DiscIn.png; sourceTree = "<group>"; };
+		D1C29BFC15FA6A00000FB7C0 /* DiscIn.pshs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DiscIn.pshs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -638,6 +648,11 @@
 		D1637BC315F70D990097AFB5 /* disc */ = {
 			isa = PBXGroup;
 			children = (
+				D1C29BF815FA6A00000FB7C0 /* DiscIn-hd.plist */,
+				D1C29BF915FA6A00000FB7C0 /* DiscIn-hd.png */,
+				D1C29BFA15FA6A00000FB7C0 /* DiscIn.plist */,
+				D1C29BFB15FA6A00000FB7C0 /* DiscIn.png */,
+				D1C29BFC15FA6A00000FB7C0 /* DiscIn.pshs */,
 				D1637BC415F70D990097AFB5 /* d1.png */,
 				D1637BC515F70D990097AFB5 /* d10.png */,
 				D1637BC615F70D990097AFB5 /* d11.png */,
@@ -733,7 +748,7 @@
 			children = (
 				D1637C2715F717E50097AFB5 /* btnadelante-on.png */,
 				D1637C2815F717E50097AFB5 /* btnadelante-over.png */,
-				D1637C2915F717E50097AFB5 /* btnatras--over.png */,
+				D1637C2915F717E50097AFB5 /* btnatras-over.png */,
 				D1637C2A15F717E50097AFB5 /* btnatras-on.png */,
 				D1637C2B15F717E50097AFB5 /* btnpausa-on.png */,
 				D1637C2C15F717E50097AFB5 /* btnpausa-over.png */,
@@ -1297,7 +1312,7 @@
 				D1637C6A15F717E50097AFB5 /* medidor.png in Resources */,
 				D1637C6B15F717E50097AFB5 /* btnadelante-on.png in Resources */,
 				D1637C6C15F717E50097AFB5 /* btnadelante-over.png in Resources */,
-				D1637C6D15F717E50097AFB5 /* btnatras--over.png in Resources */,
+				D1637C6D15F717E50097AFB5 /* btnatras-over.png in Resources */,
 				D1637C6E15F717E50097AFB5 /* btnatras-on.png in Resources */,
 				D1637C6F15F717E50097AFB5 /* btnpausa-on.png in Resources */,
 				D1637C7015F717E50097AFB5 /* btnpausa-over.png in Resources */,
@@ -1316,6 +1331,11 @@
 				D1637CAA15F816EF0097AFB5 /* hey girl.mp3 in Resources */,
 				D1637CAB15F816EF0097AFB5 /* red hot chilli pepper.mp3 in Resources */,
 				D1637CAC15F816EF0097AFB5 /* ac:dc.mp3 in Resources */,
+				D1C29BFD15FA6A01000FB7C0 /* DiscIn-hd.plist in Resources */,
+				D1C29BFE15FA6A01000FB7C0 /* DiscIn-hd.png in Resources */,
+				D1C29BFF15FA6A01000FB7C0 /* DiscIn.plist in Resources */,
+				D1C29C0015FA6A01000FB7C0 /* DiscIn.png in Resources */,
+				D1C29C0115FA6A01000FB7C0 /* DiscIn.pshs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
