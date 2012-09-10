@@ -115,8 +115,8 @@
 		D1637C7F15F729E70097AFB5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C7E15F729E70097AFB5 /* Default.png */; };
 		D1637C9515F745210097AFB5 /* accesoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637C9415F745210097AFB5 /* accesoLayer.m */; };
 		D1637C9D15F74FAD0097AFB5 /* registro.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C9C15F74FAD0097AFB5 /* registro.png */; };
-		D1637CA015F7503F0097AFB5 /* MusicLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637C9F15F7503E0097AFB5 /* MusicLayer.m */; };
-		D1637CA315F750610097AFB5 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637CA215F750600097AFB5 /* GameLayer.m */; };
+		D1637CA015F7503F0097AFB5 /* MusicScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637C9F15F7503E0097AFB5 /* MusicScene.m */; };
+		D1637CA315F750610097AFB5 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637CA215F750600097AFB5 /* GameScene.m */; };
 		D1637CA915F816EF0097AFB5 /* Guns.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1637CA515F816EE0097AFB5 /* Guns.mp3 */; };
 		D1637CAA15F816EF0097AFB5 /* hey girl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1637CA615F816EE0097AFB5 /* hey girl.mp3 */; };
 		D1637CAB15F816EF0097AFB5 /* red hot chilli pepper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1637CA715F816EF0097AFB5 /* red hot chilli pepper.mp3 */; };
@@ -233,6 +233,9 @@
 		D1C29BFF15FA6A01000FB7C0 /* DiscIn.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C29BFA15FA6A00000FB7C0 /* DiscIn.plist */; };
 		D1C29C0015FA6A01000FB7C0 /* DiscIn.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C29BFB15FA6A00000FB7C0 /* DiscIn.png */; };
 		D1C29C0115FA6A01000FB7C0 /* DiscIn.pshs in Resources */ = {isa = PBXBuildFile; fileRef = D1C29BFC15FA6A00000FB7C0 /* DiscIn.pshs */; };
+		D1C29C0615FA9AE5000FB7C0 /* OCRAEXT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D1C29C0415FA9AE5000FB7C0 /* OCRAEXT.TTF */; };
+		D1C29C0715FA9AE5000FB7C0 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1C29C0515FA9AE5000FB7C0 /* OCRAStd.otf */; };
+		D1C29C1715FC4856000FB7C0 /* global.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C29C1615FC4855000FB7C0 /* global.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -345,10 +348,10 @@
 		D1637C9315F745210097AFB5 /* accesoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accesoLayer.h; sourceTree = "<group>"; };
 		D1637C9415F745210097AFB5 /* accesoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accesoLayer.m; sourceTree = "<group>"; };
 		D1637C9C15F74FAD0097AFB5 /* registro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registro.png; sourceTree = "<group>"; };
-		D1637C9E15F7503E0097AFB5 /* MusicLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicLayer.h; sourceTree = "<group>"; };
-		D1637C9F15F7503E0097AFB5 /* MusicLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicLayer.m; sourceTree = "<group>"; };
-		D1637CA115F750600097AFB5 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
-		D1637CA215F750600097AFB5 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
+		D1637C9E15F7503E0097AFB5 /* MusicScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicScene.h; sourceTree = "<group>"; };
+		D1637C9F15F7503E0097AFB5 /* MusicScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicScene.m; sourceTree = "<group>"; };
+		D1637CA115F750600097AFB5 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		D1637CA215F750600097AFB5 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		D1637CA515F816EE0097AFB5 /* Guns.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Guns.mp3; sourceTree = "<group>"; };
 		D1637CA615F816EE0097AFB5 /* hey girl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "hey girl.mp3"; sourceTree = "<group>"; };
 		D1637CA715F816EF0097AFB5 /* red hot chilli pepper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "red hot chilli pepper.mp3"; sourceTree = "<group>"; };
@@ -585,6 +588,10 @@
 		D1C29BFA15FA6A00000FB7C0 /* DiscIn.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DiscIn.plist; sourceTree = "<group>"; };
 		D1C29BFB15FA6A00000FB7C0 /* DiscIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DiscIn.png; sourceTree = "<group>"; };
 		D1C29BFC15FA6A00000FB7C0 /* DiscIn.pshs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DiscIn.pshs; sourceTree = "<group>"; };
+		D1C29C0415FA9AE5000FB7C0 /* OCRAEXT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAEXT.TTF; sourceTree = "<group>"; };
+		D1C29C0515FA9AE5000FB7C0 /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAStd.otf; sourceTree = "<group>"; };
+		D1C29C1515FC4854000FB7C0 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
+		D1C29C1615FC4855000FB7C0 /* global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = global.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -819,16 +826,18 @@
 		D16AD7FA15F6775600F9CF19 /* crazy fred */ = {
 			isa = PBXGroup;
 			children = (
+				D1C29C1515FC4854000FB7C0 /* global.h */,
+				D1C29C1615FC4855000FB7C0 /* global.m */,
 				D16AD94C15F6775C00F9CF19 /* AppDelegate.h */,
 				D16AD94D15F6775C00F9CF19 /* AppDelegate.m */,
 				D16AD94F15F6775C00F9CF19 /* RootViewController.h */,
 				D16AD95015F6775C00F9CF19 /* RootViewController.m */,
 				D1637C9315F745210097AFB5 /* accesoLayer.h */,
 				D1637C9415F745210097AFB5 /* accesoLayer.m */,
-				D1637C9E15F7503E0097AFB5 /* MusicLayer.h */,
-				D1637C9F15F7503E0097AFB5 /* MusicLayer.m */,
-				D1637CA115F750600097AFB5 /* GameLayer.h */,
-				D1637CA215F750600097AFB5 /* GameLayer.m */,
+				D1637C9E15F7503E0097AFB5 /* MusicScene.h */,
+				D1637C9F15F7503E0097AFB5 /* MusicScene.m */,
+				D1637CA115F750600097AFB5 /* GameScene.h */,
+				D1637CA215F750600097AFB5 /* GameScene.m */,
 				D16AD95215F6775C00F9CF19 /* InitLayer.h */,
 				D16AD95315F6775C00F9CF19 /* InitLayer.m */,
 				D16AD95515F6775C00F9CF19 /* Config.h */,
@@ -842,6 +851,7 @@
 		D16AD7FB15F6775600F9CF19 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D1C29C0315FA9AE2000FB7C0 /* OCR */,
 				D1637CA415F816B70097AFB5 /* music */,
 				D1637C9B15F74F930097AFB5 /* registro */,
 				D1637BEE15F717E40097AFB5 /* final */,
@@ -1169,6 +1179,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D1C29C0315FA9AE2000FB7C0 /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				D1C29C0415FA9AE5000FB7C0 /* OCRAEXT.TTF */,
+				D1C29C0515FA9AE5000FB7C0 /* OCRAStd.otf */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1336,6 +1355,8 @@
 				D1C29BFF15FA6A01000FB7C0 /* DiscIn.plist in Resources */,
 				D1C29C0015FA6A01000FB7C0 /* DiscIn.png in Resources */,
 				D1C29C0115FA6A01000FB7C0 /* DiscIn.pshs in Resources */,
+				D1C29C0615FA9AE5000FB7C0 /* OCRAEXT.TTF in Resources */,
+				D1C29C0715FA9AE5000FB7C0 /* OCRAStd.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1445,8 +1466,9 @@
 				D16AD95115F6775C00F9CF19 /* RootViewController.m in Sources */,
 				D16AD95415F6775C00F9CF19 /* InitLayer.m in Sources */,
 				D1637C9515F745210097AFB5 /* accesoLayer.m in Sources */,
-				D1637CA015F7503F0097AFB5 /* MusicLayer.m in Sources */,
-				D1637CA315F750610097AFB5 /* GameLayer.m in Sources */,
+				D1637CA015F7503F0097AFB5 /* MusicScene.m in Sources */,
+				D1637CA315F750610097AFB5 /* GameScene.m in Sources */,
+				D1C29C1715FC4856000FB7C0 /* global.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

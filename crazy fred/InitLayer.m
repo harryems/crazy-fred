@@ -10,8 +10,9 @@
 // Import the interfaces
 #import "InitLayer.h"
 #import "accesoLayer.h"
-#import "GameLayer.h"
-#import "MusicLayer.h"
+#import "GameScene.h"
+#import "MusicScene.h"
+#import "global.h"
 
 
 // InitLayer implementation
@@ -35,14 +36,15 @@
 // on "init" you need to initialize your instance
 -(id) init
 {
+    
+
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
         CGSize size = [[CCDirector sharedDirector] winSize];
         
- 
         
-		
+        
         CCSprite *sprinteInicio = [CCSprite spriteWithFile:@"h3.png"];
         [sprinteInicio setPosition:CGPointMake(size.width / 2, size.height / 2)];
         [self addChild:sprinteInicio];
@@ -71,29 +73,9 @@
 
 - (void) acceso: (CCMenuItem  *) menuItem
  {
-     CGSize size = [[CCDirector sharedDirector] winSize];
-     CCSprite *spriteCortinasCierran = [CCSprite spriteWithFile:@"9.png"];
-     [spriteCortinasCierran setPosition:CGPointMake(size.width / 2, size.height / 2)];
-     [self addChild:spriteCortinasCierran];
-     
-     CCAnimation *animationCortinasCierran = [CCAnimation animation];
-     [animationCortinasCierran addFrameWithFilename:@"8.png"];
-     [animationCortinasCierran addFrameWithFilename:@"7.png"];
-     [animationCortinasCierran addFrameWithFilename:@"6.png"];
-     [animationCortinasCierran addFrameWithFilename:@"5.png"];
-     [animationCortinasCierran addFrameWithFilename:@"4.png"];
-     [animationCortinasCierran addFrameWithFilename:@"3.png"];
-     [animationCortinasCierran addFrameWithFilename:@"2.png"];
-     [animationCortinasCierran addFrameWithFilename:@"1.png"];
-     //[animationCortinasCierran addFrameWithTexture:<#(CCTexture2D *)#> rect:<#(CGRect)#>];
-     
 
-     CCAnimate *animateCortinasCierran = [CCAnimate actionWithDuration:5 animation:animationCortinasCierran restoreOriginalFrame:NO];
-     [spriteCortinasCierran runAction:animateCortinasCierran];
-     [self runAction:[CCSequence actions:[CCDelayTime actionWithDuration:2], nil]];
-    
     //[[CCDirector sharedDirector] replaceScene:[accesoLayer scene]];
-    [[CCDirector sharedDirector] replaceScene:[MusicLayer scene]];
+    [[CCDirector sharedDirector] replaceScene:[MusicScene scene]];
     // [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
      
 }
