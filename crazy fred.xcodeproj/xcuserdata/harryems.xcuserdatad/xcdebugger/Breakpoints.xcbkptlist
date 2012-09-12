@@ -7,130 +7,91 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "crazy fred/GameLayer.m"
-         timestampString = "368935863.004631"
+         filePath = "crazy fred/GameScene.m"
+         timestampString = "369165236.940228"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
-         landmarkName = "-touchButton:"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
+         landmarkName = "-muestrasecuencia"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "crazy fred/GameScene.m"
+         timestampString = "369165236.940228"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "181"
+         endingLineNumber = "181"
+         landmarkName = "-btnAccion"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "crazy fred/GameLayer.m"
-         timestampString = "368935863.004631"
+         filePath = "crazy fred/GameScene.m"
+         timestampString = "369164952.254058"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "26"
-         endingLineNumber = "26"
-         landmarkName = "+scene"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
+         landmarkName = "-generaSecuencia"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "crazy fred/MusicLayer.m"
-         timestampString = "368944374.002738"
+         filePath = "crazy fred/GameScene.m"
+         timestampString = "369165148.025463"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "27"
-         endingLineNumber = "27"
-         landmarkName = "+scene"
+         startingLineNumber = "149"
+         endingLineNumber = "149"
+         landmarkName = "-generaSecuencia"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "crazy fred/MusicLayer.m"
-         timestampString = "368950161.092384"
+         filePath = "crazy fred/GameScene.m"
+         timestampString = "369164851.107747"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "114"
-         endingLineNumber = "114"
-         landmarkName = "-Prev:"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
+         landmarkName = "-generaSecuencia"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "crazy fred/MusicLayer.m"
-         timestampString = "368950161.092384"
+         filePath = "crazy fred/GameScene.m"
+         timestampString = "369165005.437701"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
-         landmarkName = "-Next:"
+         startingLineNumber = "146"
+         endingLineNumber = "146"
+         landmarkName = "-generaSecuencia"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "crazy fred/MusicLayer.m"
-         timestampString = "368950161.092384"
+         filePath = "crazy fred/GameScene.m"
+         timestampString = "369165236.940228"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "107"
-         endingLineNumber = "107"
-         landmarkName = "-Next:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "crazy fred/MusicScene.m"
-         timestampString = "369104336.618927"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174"
-         landmarkName = "-Prev:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "crazy fred/MusicScene.m"
-         timestampString = "369104336.618927"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "220"
-         endingLineNumber = "220"
-         landmarkName = "-songTitle"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "crazy fred/MusicScene.m"
-         timestampString = "369101798.830252"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
-         landmarkName = "-init"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "crazy fred/InitLayer.m"
-         timestampString = "369101278.744877"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
-         landmarkName = "-init"
+         startingLineNumber = "152"
+         endingLineNumber = "152"
+         landmarkName = "-generaSecuencia"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
