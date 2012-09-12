@@ -38,7 +38,7 @@ bool wasPaused;
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
-        
+        size = [[CCDirector sharedDirector] winSize];
         isplaying=FALSE;
         gCurrentSong=0;
         discLayer= [CCLayer node];
@@ -63,69 +63,22 @@ bool wasPaused;
         [self BuildControls];
         [self BuildPause];
         
-        //[[GlobalData sharedGlobalData] myFunc];
-        [self gAbreCortinasLocal];
+        [self gAbreCortinas];
       
-        CGSize winSize = [[CCDirector sharedDirector] winSize];
-        labelScore = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:16];
-        [titleLayer addChild:labelScore];
-        labelScore.position =  ccp(winSize.width / 2 , 30);
+      
+
         
         
 	}
 	return self;
 }
-- (void) gAbreCortinasLocal
-//- (void) gAbreCortinas
+
+
+-(void) Replace
 {
-    CGSize size = [[CCDirector sharedDirector] winSize];
-    CCSprite *spriteCortinasCierran = [CCSprite spriteWithFile:@"1.png"];
-    [spriteCortinasCierran setPosition:CGPointMake(size.width / 2, size.height / 2)];
-    [cortinasLayer addChild:spriteCortinasCierran];
     
-    CCAnimation *animationCortinasCierran = [CCAnimation animation];
-    [animationCortinasCierran addFrameWithFilename:@"2.png"];
-    [animationCortinasCierran addFrameWithFilename:@"3.png"];
-    [animationCortinasCierran addFrameWithFilename:@"4.png"];
-    [animationCortinasCierran addFrameWithFilename:@"5.png"];
-    [animationCortinasCierran addFrameWithFilename:@"6.png"];
-    [animationCortinasCierran addFrameWithFilename:@"7.png"];
-    [animationCortinasCierran addFrameWithFilename:@"8.png"];
-    [animationCortinasCierran addFrameWithFilename:@"9.png"];
-    //[animationCortinasCierran addFrameWithTexture:<#(CCTexture2D *)#> rect:<#(CGRect)#>];
-    
-    
-    CCAnimate *animateCortinasCierran = [CCAnimate actionWithDuration:0.5 animation:animationCortinasCierran restoreOriginalFrame:NO];
-    [spriteCortinasCierran runAction:animateCortinasCierran];
-    //[cortinasLayer removeChild:spriteCortinasCierran cleanup:YES];
-    
-    
-}
-- (void) gCierraCortinasLocal
-//- (void) gAbreCortinas
-{
-    CGSize size = [[CCDirector sharedDirector] winSize];
-    CCSprite *spriteCortinasCierran = [CCSprite spriteWithFile:@"9.png"];
-    [spriteCortinasCierran setPosition:CGPointMake(size.width / 2, size.height / 2)];
-    [cortinasLayer addChild:spriteCortinasCierran];
-    
-    CCAnimation *animationCortinasCierran = [CCAnimation animation];
-    [animationCortinasCierran addFrameWithFilename:@"8.png"];
-    [animationCortinasCierran addFrameWithFilename:@"7.png"];
-    [animationCortinasCierran addFrameWithFilename:@"6.png"];
-    [animationCortinasCierran addFrameWithFilename:@"5.png"];
-    [animationCortinasCierran addFrameWithFilename:@"4.png"];
-    [animationCortinasCierran addFrameWithFilename:@"3.png"];
-    [animationCortinasCierran addFrameWithFilename:@"2.png"];
-    [animationCortinasCierran addFrameWithFilename:@"1.png"];
-    //[animationCortinasCierran addFrameWithTexture:<#(CCTexture2D *)#> rect:<#(CGRect)#>];
-    
-    
-    CCAnimate *animateCortinasCierran = [CCAnimate actionWithDuration:0.5 animation:animationCortinasCierran restoreOriginalFrame:NO];
-    [spriteCortinasCierran runAction:animateCortinasCierran];
-    //cortinasLayer.visible=FALSE;
-    //[cortinasLayer runAction:[CCSequence actions:[CCDelayTime actionWithDuration:2], nil]];
     [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+    
 }
 
 -(void) discIn
@@ -156,29 +109,43 @@ bool wasPaused;
 
 -(void) BuildControls
 {
-    CGSize size = [[CCDirector sharedDirector] winSize];
-    CCMenuItemImage *Next = [CCMenuItemImage itemFromNormalImage:@"btnadelante-on.png" selectedImage:@"btnadelante-over.png" target:self selector:@selector(Next:)];
+    CCMenuItemImage *btnNext = [CCMenuItemImage itemFromNormalImage:@"btnadelante-on.png" selectedImage:@"btnadelante-over.png" target:self selector:@selector(Next:)];
     
-    CCMenuItemImage *Prev = [CCMenuItemImage itemFromNormalImage:@"btnatras-on.png" selectedImage:@"btnatras-over.png" target:self selector:@selector(Prev:)];
+    CCMenuItemImage *btnPrev = [CCMenuItemImage itemFromNormalImage:@"btnatras-on.png" selectedImage:@"btnatras-over.png" target:self selector:@selector(Prev:)];
     
-    // CCMenuItemImage *Pause = [CCMenuItemImage itemFromNormalImage:@"btnpausa-on.png" selectedImage:@"btnpausa-over.png" target:self selector:@selector(Pause:)];
-    
-    CCMenuItemImage *Play = [CCMenuItemImage itemFromNormalImage:@"btnplay-on.png" selectedImage:@"btnplay-over.png" target:self selector:@selector(Play:)];
+    CCMenuItemImage *btnPlay = [CCMenuItemImage itemFromNormalImage:@"btnplay-on.png" selectedImage:@"btnplay-over.png" target:self selector:@selector(Play:)];
     
     
-    CCMenu *Reproduccion = [CCMenu menuWithItems:Play,Prev,Next,nil];
+    CCMenu *MenuReproduccion = [CCMenu menuWithItems:btnPlay,btnPrev,btnNext,nil];
     
-    [Reproduccion alignItemsHorizontally];
-    Reproduccion.position =CGPointMake(size.width - 150, 30);
+    [MenuReproduccion alignItemsHorizontally];
+     MenuReproduccion.position =CGPointMake(size.width - 150, 30);
     
-    [controlsLayer addChild:Reproduccion];
+
     
-    CCMenuItemImage *Jugar = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png"  selectedImage:@"btnjugar-over.png" target:self selector:@selector(Jugar:)];
+    CCMenuItemImage *btnJugar = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png" selectedImage:@"btnjugar-over.png" target:self selector:@selector(Jugar:)];
     
-    CCMenu *JugarMenu = [CCMenu menuWithItems:Jugar, nil];
     
-    JugarMenu.position =CGPointMake(200, 30);
-    [controlsLayer addChild:JugarMenu];
+    //CCMenuItemImage *btnJugar = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png"  selectedImage:@"btnjugar-over.png" target:self selector:@selector(gCierraCortinas:)];
+    
+    CCMenu *MenuJugar = [CCMenu menuWithItems:btnJugar, nil];
+    
+    MenuJugar.position =CGPointMake(200, 30);
+    [controlsLayer addChild:MenuReproduccion];
+
+    [controlsLayer addChild:MenuJugar];
+    
+    
+    labelTitle = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:16];
+    [titleLayer addChild:labelTitle];
+    labelTitle.position =  ccp(size.width / 2 , 30);
+    
+}
+
+- (void) Jugar: (CCMenuItem  *) menuItem
+
+{
+    [self gCierraCortinas];
 }
 
 -(void) BuildBackground
@@ -238,12 +205,7 @@ bool wasPaused;
     wasPaused=TRUE;
 }
 
-- (void) Jugar: (CCMenuItem  *) menuItem
 
-{
-    [self gCierraCortinasLocal];
-    //[[CCDirector sharedDirector] replaceScene:[GameScene scene]];
-}
 
 -(void) songTitle
 {
@@ -253,8 +215,37 @@ bool wasPaused;
 
     //[labelScore setColor:ccBLACK];
 
-    [labelScore setString:stringCurrentTitle];
+    [labelTitle setString:stringCurrentTitle];
 
+}
+
+
+- (void) gAbreCortinas
+{
+    CCSprite *cortina = [CCSprite spriteWithFile:@"1.png" ];
+    cortina.position = ccp(size.width/2,size.height/2);
+    [cortinasLayer addChild:cortina];
+    
+    id actionMove = [CCMoveTo actionWithDuration:2
+                                        position:ccp(0,size.height+(size.height/2))
+                     ];
+    [cortinasLayer runAction:[CCSequence actions:actionMove,nil]];
+    
+    
+}
+- (void) gCierraCortinas
+{
+    
+    CCSprite *cortina = [CCSprite spriteWithFile:@"1.png" ];
+    cortina.position = ccp(size.width/2,size.height*2);
+    [cortinasLayer addChild:cortina];
+    
+    id actionMove = [CCMoveTo actionWithDuration:2
+                                        position:ccp(0,0)
+                     ];
+    id done=[CCCallFunc actionWithTarget:self selector:@selector(Replace)];
+    [cortinasLayer runAction:[CCSequence actions:actionMove,done ,nil]];
+    
 }
 
 

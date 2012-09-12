@@ -7,7 +7,6 @@
 //
 #import "SimpleAudioEngine.h"
 #import "GameScene.h"
-#import "MusicScene.h"
 #import "global.h"
 
 int gCurrentSong;
@@ -39,36 +38,78 @@ int gCurrentSong;
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
         
+        
+        size = [[CCDirector sharedDirector] winSize];
+        count=1;
+
         medidorLayer= [CCLayer node];
         backGroundLayer= [CCLayer node];
         instrumentosLayer= [CCLayer node];
+        gamecortinasLayer= [CCLayer node];
+        gamecortinasFinal= [CCLayer node];
+        agujaLayer= [CCLayer node];
+        titleLayer= [CCLayer node];
+
+
         
 
-        [self addChild:medidorLayer];
         [self addChild:backGroundLayer];
         [self addChild:instrumentosLayer];
-        
+        [self addChild:titleLayer];
+
+
+        [self addChild:medidorLayer];
+        [self addChild:agujaLayer];
+        [self addChild:gamecortinasLayer];
+        [self addChild:gamecortinasFinal];
+
+
         [self BuildBackground];
         [self BuildInstrumentos];
+        [self gameAbreCortinas];
 
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     }
 	return self;
 }
 
+-(void) avanzaAguja:(int)time{
+    CCSprite *aguja=[CCSprite spriteWithFile:@"flecha1.png"];
+    aguja.scale=0.9;
+    aguja.position = ccp(930, 80);
+    [agujaLayer addChild:aguja];
+
+id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
+[agujaLayer runAction:[CCSequence actions:actionMove,nil]];
+
+}
 -(void) BuildBackground
 {
 
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
     background = [CCSprite spriteWithFile:@"juego-bg.png"];
-    background.position = ccp(winSize.width/2, winSize.height/2);
-    [backGroundLayer addChild:background]; // añadimos el sprite a la capa l1
+    background.position = ccp(size.width/2, size.height/2);
+    [backGroundLayer addChild:background];
+    
+    medidor = [CCSprite spriteWithFile:@"medidor.png"];
+    medidor.scale=0.9;
+    medidor.position = ccp(930, 80);
+    [medidorLayer addChild:medidor];
+    
+    CCSprite *aguja=[CCSprite spriteWithFile:@"flecha1.png"];
+    aguja.scale=0.9;
+    aguja.position = ccp(930, 80);
+    [agujaLayer addChild:aguja];
+    
+    
+    
+    labelScore = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:16];
+    [titleLayer addChild:labelScore];
+    labelScore.position =  ccp(size.width / 2 , 30);
 
 }
 
 -(void) BuildInstrumentos
 {
-    CGSize size = [[CCDirector sharedDirector] winSize];
     CCMenuItemImage *ba1 = [CCMenuItemImage itemFromNormalImage:@"ba1.png" selectedImage:@"be1.png" target:self selector:@selector(touchButton:)];
     CCMenuItemImage *ba2 = [CCMenuItemImage itemFromNormalImage:@"ba2.png"  selectedImage:@"be2.png" target:self selector:@selector(touchButton:)];
     CCMenuItemImage *ba3 = [CCMenuItemImage itemFromNormalImage:@"ba3.png"  selectedImage:@"be3.png" target:self selector:@selector(touchButton:)];
@@ -92,10 +133,59 @@ int gCurrentSong;
 
 }
 
-- (void) touchButton: (CCMenuItem  *) menuItem
+- (void) gameAbreCortinas
+{
+    CCSprite *cortina = [CCSprite spriteWithFile:@"1.png" ];
+    cortina.position = ccp(size.width/2,size.height/2);
+    [gamecortinasLayer addChild:cortina];
+    
+    id actionMove = [CCMoveTo actionWithDuration:2
+                                        position:ccp(0,size.height+(size.height/2))
+                     ];
+    [gamecortinasLayer runAction:[CCSequence actions:actionMove,nil]];
+}
+
+
+- (void) cierreFinal
+{
+   // [gamecortinasLayer removeAllChildrenWithCleanup:YES];
+    CCSprite *cortinaFinal = [CCSprite spriteWithFile:@"r8.png" ];
+    cortinaFinal.position = ccp(size.width/2,size.height*2);
+    [gamecortinasLayer addChild:cortinaFinal];
+    
+    id actionMove = [CCMoveTo actionWithDuration:2
+                                        position:ccp(0,0)
+                     ];
+    id marcador=[CCCallFunc actionWithTarget:self selector:@selector(muestraMarcador)];
+
+    
+    [gamecortinasLayer runAction:[CCSequence actions:actionMove,marcador,nil]];
+}
+
+
+-(void) muestraMarcador
 {
 
+    labelScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%2.0f",gScore] fontName:@"OCRAEXT" fontSize:40 ];
+    [gamecortinasLayer addChild:labelScore];
+    labelScore.position =  ccp(size.width / 2 , size.height / 2);
+    
 
+
+}
+
+
+- (void) touchButton: (CCMenuItem  *) menuItem
+{
+    count++;
+    
+    if (count==5){
+        [self cierreFinal];
+        [self muestraMarcador];
+    }
+    else{
+    [self avanzaAguja:count];
+    }
 }
 
 

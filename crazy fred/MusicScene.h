@@ -10,9 +10,14 @@
 #import "cocos2d.h"
 
 @interface MusicScene : CCLayer {
-    CCLayer *discLayer, * controlsLayer,*cortinasLayer, *backGroundLayer,*titleLayer,*pauseLayer;
+
+    CCLayer *discLayer, * controlsLayer,*cortinasLayer, *backGroundLayer,*titleLayer,*pauseLayer,
+    *discLayerOut;
     CCSprite *background;
-    CCLabelTTF *labelScore;
+    CCLabelTTF *labelTitle;
+    bool isplaying;
+    bool wasPaused;
+    CGSize size;
 }
 
 // returns a CCScene that contains the InitLayer as the only child
@@ -22,9 +27,8 @@
 -(void) BuildControls;
 -(void) BuildPause;
 -(void) songTitle;
--(void) gAbreCortinasLocal;
-
--(void) gCierraCortinasLocal;
+-(void) gAbreCortinas;
+-(void) gCierraCortinas;
 @end
 
 

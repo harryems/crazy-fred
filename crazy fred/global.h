@@ -14,15 +14,5 @@ extern int gCurrentSong;
 extern NSString* gSongs[];
 extern NSString* gTitles[];
 extern NSString *gCTitle;
+extern float gScore;
 
-@interface GlobalData : NSObject {
-    NSString *message; // global variable
-}
-
-@property (nonatomic, retain) NSString *message;
-
-//-(void) gAbreCortinas;
--(void) gCierraCortinas:(CCLayer *)layer;
-
-
-@end
