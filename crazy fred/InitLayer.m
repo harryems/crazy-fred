@@ -48,13 +48,13 @@
 
         [self addChild:backGroundLayer];
         [self addChild:controlsLayer];
-
+        [self addChild:luzLayer];
         [self addChild:cortinasLayer];
 
-        [self addChild:luzLayer];
+
         
         [self BuildBackground];
-        //[self BuilLuz];
+        [self BuilLuz];
 
         [self BuildControls];
 
@@ -79,7 +79,7 @@
     
     
     CCAnimate *animat = [CCAnimate actionWithDuration:1 animation:animationInicio restoreOriginalFrame:NO];
-    [luzLayer runAction:animat];
+    //[luzLayer runAction:animat];
     
     
     

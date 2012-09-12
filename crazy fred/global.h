@@ -16,5 +16,7 @@ extern NSString* gTitles[];
 extern NSString *gCTitle;
 extern float gScore;
 extern float gTimingLevel[];
-NSMutableArray *secuencia;
+extern NSMutableArray *secuencia;
+//
+
 

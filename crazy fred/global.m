@@ -11,7 +11,7 @@
 
 int gCurrentSong;
 float gScore;
-
+NSMutableArray  *secuencia;
 NSString *gCTitle;
 
  NSString* gSongs[] =

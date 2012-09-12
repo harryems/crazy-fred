@@ -17,8 +17,10 @@
     CCLabelTTF *labelScore;
     int count;
     int paso;
+    int internalPaso;
     CGSize size;
-    NSMutableArray *secuencia;
+    //NSMutableArray *secuencia;
+    NSMutableArray *array;
     CCMenuItemImage *ba1 ;
     CCMenuItemImage *ba2 ;
     CCMenuItemImage *ba3 ;
@@ -32,11 +34,15 @@
     
 }
 -(void) generaSecuencia;
+
+-(void) gameAbreCortinas;
+-(void) muestrasecuencia;
+
+
+-(void) cierreFinal;
+-(void) muestraMarcador;
 -(void) BuildBackground;
 -(void) BuildInstrumentos;
--(void) gameAbreCortinas;
--(void) btnAccion;
-
 
 // returns a CCScene that contains the InitLayer as the only child
 +(CCScene *) scene;
