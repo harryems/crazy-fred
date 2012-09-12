@@ -27,6 +27,14 @@ NSString* gTitles[] =
     @"ac:dc"
 };
 
+float gTimingLevel[] =
+{
+  1.0,
+  0.5,
+  0.30,
+  0.15
+};
+
 
 
 

@@ -41,6 +41,9 @@ int gCurrentSong;
         
         size = [[CCDirector sharedDirector] winSize];
         count=1;
+        paso=1;
+        //secuencia = [NSMutableArray array];
+
 
         medidorLayer= [CCLayer node];
         backGroundLayer= [CCLayer node];
@@ -67,6 +70,8 @@ int gCurrentSong;
         [self BuildBackground];
         [self BuildInstrumentos];
         [self gameAbreCortinas];
+        
+        [self generaSecuencia];
 
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     }
@@ -110,15 +115,15 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
 
 -(void) BuildInstrumentos
 {
-    CCMenuItemImage *ba1 = [CCMenuItemImage itemFromNormalImage:@"ba1.png" selectedImage:@"be1.png" target:self selector:@selector(touchButton:)];
-    CCMenuItemImage *ba2 = [CCMenuItemImage itemFromNormalImage:@"ba2.png"  selectedImage:@"be2.png" target:self selector:@selector(touchButton:)];
-    CCMenuItemImage *ba3 = [CCMenuItemImage itemFromNormalImage:@"ba3.png"  selectedImage:@"be3.png" target:self selector:@selector(touchButton:)];
-    CCMenuItemImage *ba4 = [CCMenuItemImage itemFromNormalImage:@"ba4.png" selectedImage:@"be4.png" target:self selector:@selector(touchButton:)];
-    CCMenuItemImage *ba5 = [CCMenuItemImage itemFromNormalImage:@"ba5.png"  selectedImage:@"be5.png" target:self selector:@selector(touchButton:)];
-    CCMenuItemImage *ba6 = [CCMenuItemImage itemFromNormalImage:@"ba6.png"  selectedImage:@"be6.png" target:self selector:@selector(touchButton:)];
-    CCMenuItemImage *ba7 = [CCMenuItemImage itemFromNormalImage:@"ba7.png" selectedImage:@"be7.png" target:self selector:@selector(touchButton:)];
-    CCMenuItemImage *ba8 = [CCMenuItemImage itemFromNormalImage:@"ba8.png"  selectedImage:@"be8.png" target:self selector:@selector(touchButton:)];
-    CCMenuItemImage *ba9 = [CCMenuItemImage itemFromNormalImage:@"ba9.png"  selectedImage:@"be9.png" target:self selector:@selector(touchButton:)];
+    ba1 = [CCMenuItemImage itemFromNormalImage:@"ba1.png" selectedImage:@"be1.png" target:self selector:@selector(touchButton:)];
+    ba2 = [CCMenuItemImage itemFromNormalImage:@"ba2.png"  selectedImage:@"be2.png" target:self selector:@selector(touchButton:)];
+    ba3 = [CCMenuItemImage itemFromNormalImage:@"ba3.png"  selectedImage:@"be3.png" target:self selector:@selector(touchButton:)];
+    ba4 = [CCMenuItemImage itemFromNormalImage:@"ba4.png" selectedImage:@"be4.png" target:self selector:@selector(touchButton:)];
+    ba5 = [CCMenuItemImage itemFromNormalImage:@"ba5.png"  selectedImage:@"be5.png" target:self selector:@selector(touchButton:)];
+    ba6 = [CCMenuItemImage itemFromNormalImage:@"ba6.png"  selectedImage:@"be6.png" target:self selector:@selector(touchButton:)];
+    ba7 = [CCMenuItemImage itemFromNormalImage:@"ba7.png" selectedImage:@"be7.png" target:self selector:@selector(touchButton:)];
+    ba8 = [CCMenuItemImage itemFromNormalImage:@"ba8.png"  selectedImage:@"be8.png" target:self selector:@selector(touchButton:)];
+    ba9 = [CCMenuItemImage itemFromNormalImage:@"ba9.png"  selectedImage:@"be9.png" target:self selector:@selector(touchButton:)];
     
     CCMenu *Instrumentos = [CCMenu menuWithItems:ba1,ba2,ba3,ba4,ba5,ba6,ba7,ba8,ba9, nil];
     
@@ -132,6 +137,82 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
     [instrumentosLayer addChild:Instrumentos];
 
 }
+
+-(void) generaSecuencia
+{
+
+    for (int i; i<20;i++)
+    {
+        int temp= (arc4random() % 9) + 1;
+        [secuencia addObject:[NSNumber numberWithInt:temp] ];
+
+    }
+    int tm=[[secuencia objectAtIndex:1]integerValue];
+    NSLog(@"array %d\n", tm );
+
+
+}
+    
+
+-(void) muestrasecuencia
+{
+    for(int imuestra=1; imuestra <= paso ;imuestra++)
+    {
+        
+       /*  [CCCallFuncND actionWithTarget:self
+                          selector:@selector(btnAccion:data:)
+                              data:(void*)[NSNumber numberWithInt:imuestra]
+          ];
+        */
+        [self btnAccion];
+    }
+    
+
+
+}
+
+
+//-(void) btnAccion:(id)sender data:(int)num
+
+-(void) btnAccion
+{
+    /*
+    NSString *stringtmp=[NSString stringWithFormat:@"ba%@", [secuencia objectAtIndex:paso]];
+    NSLog(stringtmp);
+    CCMenuItemImage *Itemtmp=[self valueForKey:stringtmp];
+
+   // NSString *numbtn= [NSString stringWithFormat:@"ba%d",num];//@"ba"+num;
+    //[ba1 selected];
+    id delay=[CCDelayTime actionWithDuration:gTimingLevel[gCurrentSong]];
+
+    id select= [CCCallFuncND actionWithTarget:self
+                                     selector:@selector(seleccionar:data:)
+                                     data:Itemtmp
+                ];
+    id unselect= [CCCallFuncND actionWithTarget:self
+                                     selector:@selector(deseleccionar:data:)
+                                         data:Itemtmp
+                ];
+  
+    [self runAction:[CCSequence actions: select,delay,unselect,nil]];
+*/
+}
+
+-(void) seleccionar:(id)sender data:(CCMenuItemImage *) boton
+{
+
+    [boton selected];
+
+}
+
+-(void) deseleccionar:(id)sender data:(CCMenuItemImage *) boton
+{
+    
+    [boton unselected];
+    
+}
+
+
 
 - (void) gameAbreCortinas
 {
@@ -177,7 +258,8 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
 
 - (void) touchButton: (CCMenuItem  *) menuItem
 {
-    count++;
+   
+    /*count++;
     
     if (count==5){
         [self cierreFinal];
@@ -185,7 +267,10 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
     }
     else{
     [self avanzaAguja:count];
-    }
+    }*/
+    
+    [self muestrasecuencia];
+    paso++;
 }
 
 
