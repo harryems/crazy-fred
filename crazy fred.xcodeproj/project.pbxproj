@@ -68,12 +68,6 @@
 		D1637C6015F717E50097AFB5 /* j1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1A15F717E50097AFB5 /* j1.png */; };
 		D1637C6115F717E50097AFB5 /* j2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1B15F717E50097AFB5 /* j2.png */; };
 		D1637C6215F717E50097AFB5 /* juego-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1C15F717E50097AFB5 /* juego-bg.png */; };
-		D1637C6415F717E50097AFB5 /* flecha2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1F15F717E50097AFB5 /* flecha2.png */; };
-		D1637C6515F717E50097AFB5 /* flecha3.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2015F717E50097AFB5 /* flecha3.png */; };
-		D1637C6615F717E50097AFB5 /* flecha4.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2115F717E50097AFB5 /* flecha4.png */; };
-		D1637C6715F717E50097AFB5 /* flecha5.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2215F717E50097AFB5 /* flecha5.png */; };
-		D1637C6815F717E50097AFB5 /* flecha6.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2315F717E50097AFB5 /* flecha6.png */; };
-		D1637C6915F717E50097AFB5 /* flecha7.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2415F717E50097AFB5 /* flecha7.png */; };
 		D1637C6A15F717E50097AFB5 /* medidor.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2515F717E50097AFB5 /* medidor.png */; };
 		D1637C6B15F717E50097AFB5 /* btnadelante-on.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2715F717E50097AFB5 /* btnadelante-on.png */; };
 		D1637C6C15F717E50097AFB5 /* btnadelante-over.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2815F717E50097AFB5 /* btnadelante-over.png */; };
@@ -274,12 +268,6 @@
 		D1637C1A15F717E50097AFB5 /* j1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = j1.png; sourceTree = "<group>"; };
 		D1637C1B15F717E50097AFB5 /* j2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = j2.png; sourceTree = "<group>"; };
 		D1637C1C15F717E50097AFB5 /* juego-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "juego-bg.png"; sourceTree = "<group>"; };
-		D1637C1F15F717E50097AFB5 /* flecha2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha2.png; sourceTree = "<group>"; };
-		D1637C2015F717E50097AFB5 /* flecha3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha3.png; sourceTree = "<group>"; };
-		D1637C2115F717E50097AFB5 /* flecha4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha4.png; sourceTree = "<group>"; };
-		D1637C2215F717E50097AFB5 /* flecha5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha5.png; sourceTree = "<group>"; };
-		D1637C2315F717E50097AFB5 /* flecha6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha6.png; sourceTree = "<group>"; };
-		D1637C2415F717E50097AFB5 /* flecha7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha7.png; sourceTree = "<group>"; };
 		D1637C2515F717E50097AFB5 /* medidor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medidor.png; sourceTree = "<group>"; };
 		D1637C2715F717E50097AFB5 /* btnadelante-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnadelante-on.png"; sourceTree = "<group>"; };
 		D1637C2815F717E50097AFB5 /* btnadelante-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnadelante-over.png"; sourceTree = "<group>"; };
@@ -661,12 +649,6 @@
 			isa = PBXGroup;
 			children = (
 				D1BE04571601C962008753CD /* flecha1.png */,
-				D1637C1F15F717E50097AFB5 /* flecha2.png */,
-				D1637C2015F717E50097AFB5 /* flecha3.png */,
-				D1637C2115F717E50097AFB5 /* flecha4.png */,
-				D1637C2215F717E50097AFB5 /* flecha5.png */,
-				D1637C2315F717E50097AFB5 /* flecha6.png */,
-				D1637C2415F717E50097AFB5 /* flecha7.png */,
 				D1637C2515F717E50097AFB5 /* medidor.png */,
 			);
 			path = medidor;
@@ -1222,12 +1204,6 @@
 				D1637C6015F717E50097AFB5 /* j1.png in Resources */,
 				D1637C6115F717E50097AFB5 /* j2.png in Resources */,
 				D1637C6215F717E50097AFB5 /* juego-bg.png in Resources */,
-				D1637C6415F717E50097AFB5 /* flecha2.png in Resources */,
-				D1637C6515F717E50097AFB5 /* flecha3.png in Resources */,
-				D1637C6615F717E50097AFB5 /* flecha4.png in Resources */,
-				D1637C6715F717E50097AFB5 /* flecha5.png in Resources */,
-				D1637C6815F717E50097AFB5 /* flecha6.png in Resources */,
-				D1637C6915F717E50097AFB5 /* flecha7.png in Resources */,
 				D1637C6A15F717E50097AFB5 /* medidor.png in Resources */,
 				D1637C6B15F717E50097AFB5 /* btnadelante-on.png in Resources */,
 				D1637C6C15F717E50097AFB5 /* btnadelante-over.png in Resources */,

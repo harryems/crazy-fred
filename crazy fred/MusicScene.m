@@ -182,15 +182,15 @@ bool wasPaused;
         wasPaused=FALSE;
     }
     
-    CCSprite *disc2 = [CCSprite spriteWithFile:@"d7.png" ];
-    disc2.position = ccp(size.width+size.width/2,size.height/2);
+    //CCSprite *disc2 = [CCSprite spriteWithFile:@"d7.png" ];
+    //disc2.position = ccp(size.width+size.width/2,size.height/2);
     //[discLayer addChild:disc2];
     
     //CCSprite *disc = [CCSprite spriteWithFile:@"d7.png" ];
-    disc.position = ccp(size.width+size.width/2,size.height/2);
+    //disc.position = ccp(size.width+size.width/2,size.height/2);
     //[discLayer addChild:disc];
 
-    
+   /*
     
     
     id actionMove = [CCMoveTo actionWithDuration:2
@@ -209,10 +209,10 @@ bool wasPaused;
                                           data:disc
                  ];
     
-    
+    */
     //id moveaction=[discLayer runAction:[CCSequence actions:actionMove,nil]];
     
-    [discLayer runAction:[CCSequence actions:addDisc2,actionMove,nil]];
+   // [discLayer runAction:[CCSequence actions:addDisc2,actionMove,nil]];
 
     [self songTitle];
     //[self discIn];
