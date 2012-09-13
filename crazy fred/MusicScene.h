@@ -14,6 +14,7 @@
     CCLayer *discLayer, * controlsLayer,*cortinasLayer, *backGroundLayer,*titleLayer,*pauseLayer,
     *discLayerOut;
     CCSprite *background;
+    CCSprite *disc;
     CCLabelTTF *labelTitle;
     bool isplaying;
     bool wasPaused;

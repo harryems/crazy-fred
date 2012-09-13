@@ -43,6 +43,7 @@ int gCurrentSong;
         count=1;
         paso=1;
         imuestra=0;
+        gScore=0;
         array =  [[NSMutableArray array] retain];
 
         medidorLayer= [CCLayer node];
@@ -99,6 +100,16 @@ int gCurrentSong;
     }
     
 }
+
+-(void) actualizaScore
+{
+
+    gScore=gScore+(paso*(2-gTimingLevel[gCurrentSong])*100 );
+    labelCurrenScore.string=[NSString stringWithFormat:@"%6.0f",gScore];
+
+    
+}
+
   
 -(void)muestrasecuencia
 {
@@ -160,7 +171,7 @@ int gCurrentSong;
 
 - (void) gameAbreCortinas
 {
-    CCSprite *cortina = [CCSprite spriteWithFile:@"1.png" ];
+    cortina = [CCSprite spriteWithFile:@"1.png" ];
     cortina.position = ccp(size.width/2,size.height/2);
     [gamecortinasLayer addChild:cortina];
     
@@ -173,30 +184,44 @@ int gCurrentSong;
     id secuencia=[CCCallFunc actionWithTarget:self selector:@selector(muestrasecuencia)];
     [gamecortinasLayer runAction:[CCSequence actions:actionMove,delay,secuencia,nil]];
 }
-
-
-- (void) cierreFinal
+-(void) cierreFinalCandados
 {
-    CCSprite *cortinaFinal = [CCSprite spriteWithFile:@"r8.png" ];
+
+    CCSprite *cortinaFinal = [CCSprite spriteWithFile:@"r9.png" ];
     cortinaFinal.position = ccp(size.width/2,size.height*2);
     [gamecortinasFinal addChild:cortinaFinal];
     
     id actionMove = [CCMoveTo actionWithDuration:2
-                                        position:ccp(0,0)
+                                        position:ccp(0,-size.height-(size.height/2))
                      ];
     id marcador=[CCCallFunc actionWithTarget:self selector:@selector(muestraMarcador)];
-
     
     [gamecortinasFinal runAction:[CCSequence actions:actionMove,marcador,nil]];
+
+
+}
+
+- (void) cierreFinal
+{
+   
+    
+    id actionMove = [CCMoveTo actionWithDuration:2
+                                        position:ccp(0,0)
+                     ];
+
+    id candados=[CCCallFunc actionWithTarget:self selector:@selector(cierreFinalCandados)];
+
+    [gamecortinasLayer runAction:[CCSequence actions:actionMove,candados,nil]];
+
 }
 
 
 -(void) muestraMarcador
 {
 
-    labelScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%2.0f",gScore] fontName:@"OCRAEXT" fontSize:40 ];
-    [gamecortinasLayer addChild:labelScore];
-    labelScore.position =  ccp(size.width / 2 , size.height / 2);
+    labelScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%2.0f",gScore] fontName:@"OCRAEXT" fontSize:50 ];
+    [gamecortinasFinal addChild:labelScore];
+    labelScore.position =  ccp(size.width / 2 , 30);
     
 
 
@@ -217,15 +242,15 @@ int gCurrentSong;
     ba9.tag=9;
     
 
-
-        id pausa=[CCCallFunc actionWithTarget:self selector:@selector(pauseBackgroundMusic)];
-        id resumen=[CCCallFunc actionWithTarget:self selector:@selector(resumeBackgroundMusic)];
+    id pausa=[CCCallFunc actionWithTarget:self selector:@selector(pausebackground)];
+    id resumen=[CCCallFunc actionWithTarget:self selector:@selector(resumenbackground)];
+    
         id delayMusic=[CCDelayTime actionWithDuration:0.5];
        //[CCCallFunc actionWithTarget:backGroundLayer selector:@selector(resumeBackgroundMusic)];
 
 
     
-      //  [self runAction:[CCSequence actions:resumen,delayMusic,pausa,nil]];
+        [self runAction:[CCSequence actions:resumen,delayMusic,pausa,nil]];
     
     
 
@@ -238,20 +263,29 @@ int gCurrentSong;
         if( tmp != [sender tag ]  )
         {
              NSLog(@"Error!!!!");
-            [self cierreFinal];
+            id cierre=[CCCallFunc actionWithTarget:self selector:@selector(cierreFinal)];
+
+            [self runAction:[CCSequence actions:cierre,nil]];
+
             //[self performSelector:@selector(cierreFinal)];  // equivocacion
         }
+        else{
     
-    internalPaso++;
-    if (internalPaso==paso)
-    {
-                
-        imuestra=0;
-        paso++;
-        [self avanzaAguja:1];
-        [self muestrasecuencia];
-    
-    }
+                internalPaso++;
+                if (internalPaso==paso)
+                {
+                    imuestra=0;
+                    paso++;
+                    [self actualizaScore];
+                    
+                    id delay=[CCDelayTime actionWithDuration:1];
+                    [self avanzaAguja:1];
+
+                    id secuencia=[CCCallFunc actionWithTarget:self selector:@selector(muestrasecuencia)];
+                    [self runAction:[CCSequence actions:delay,secuencia,nil]];
+                }
+            
+        }
 }
 
 -(void) pausebackground
@@ -286,10 +320,17 @@ int gCurrentSong;
     [agujaLayer addChild:aguja];
     
     
+    labelCurrenScore = [CCLabelTTF  labelWithString:[NSString stringWithFormat:@"%6.0f",gScore]
+                                    fontName:@"OCRAEXT"
+                                    fontSize:35
+                        ];
+    [medidorLayer addChild:labelCurrenScore];
+    labelCurrenScore.position =  ccp(930, 20);
     
-    labelScore = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:16];
-    [titleLayer addChild:labelScore];
-    labelScore.position =  ccp(size.width / 2 , 30);
+    
+    labelTitle = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:16];
+    [titleLayer addChild:labelTitle];
+    labelTitle.position =  ccp(size.width / 2 , 30);
     
 }
 

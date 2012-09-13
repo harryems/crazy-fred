@@ -126,8 +126,6 @@ bool wasPaused;
     CCMenuItemImage *btnJugar = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png" selectedImage:@"btnjugar-over.png" target:self selector:@selector(Jugar:)];
     
     
-    //CCMenuItemImage *btnJugar = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png"  selectedImage:@"btnjugar-over.png" target:self selector:@selector(gCierraCortinas:)];
-    
     CCMenu *MenuJugar = [CCMenu menuWithItems:btnJugar, nil];
     
     MenuJugar.position =CGPointMake(200, 30);
@@ -152,10 +150,14 @@ bool wasPaused;
 -(void) BuildBackground
 {
     
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
     background = [CCSprite spriteWithFile:@"M1.png"];
-    background.position = ccp(winSize.width/2, winSize.height/2);
-    [backGroundLayer addChild:background]; // añadimos el sprite a la capa l1
+    background.position = ccp(size.width/2, size.height/2);
+    [backGroundLayer addChild:background];
+    
+    disc = [CCSprite spriteWithFile:@"d7.png" ];
+    disc.position = ccp(size.width/2,size.height/2);
+    [discLayer addChild:disc];
+    
     
 }
 
@@ -179,10 +181,56 @@ bool wasPaused;
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
         wasPaused=FALSE;
     }
+    
+    CCSprite *disc2 = [CCSprite spriteWithFile:@"d7.png" ];
+    disc2.position = ccp(size.width+size.width/2,size.height/2);
+    //[discLayer addChild:disc2];
+    
+    //CCSprite *disc = [CCSprite spriteWithFile:@"d7.png" ];
+    disc.position = ccp(size.width+size.width/2,size.height/2);
+    //[discLayer addChild:disc];
+
+    
+    
+    
+    id actionMove = [CCMoveTo actionWithDuration:2
+                                        position:ccp(-size.width,0)
+                     ];
+    id addDisc2= [CCCallFuncND actionWithTarget:self
+                                       selector:@selector(addtolayer:data:)
+                                           data:disc2
+                  ];
+    id addDisc= [CCCallFuncND actionWithTarget:self
+                                       selector:@selector(addtolayer:)
+                                           data:disc
+                  ];
+    id removeDisc2= [CCCallFuncND actionWithTarget:self
+                                      selector:@selector(removetolayer:)
+                                          data:disc
+                 ];
+    
+    
+    //id moveaction=[discLayer runAction:[CCSequence actions:actionMove,nil]];
+    
+    [discLayer runAction:[CCSequence actions:addDisc2,actionMove,nil]];
+
     [self songTitle];
-    [self discIn];
+    //[self discIn];
     
 }
+
+-(void) addtolayer:(id)sender data:(CCSprite *)sprite
+{
+    [discLayer addChild:sprite];
+
+}
+-(void) removetolayer:(id)sender data:(CCSprite *)sprite
+{
+    [discLayer removeChild:sprite cleanup:YES];
+    
+}
+
+
 - (void) Play: (CCMenuItem  *) menuItem
 {
     
@@ -211,11 +259,7 @@ bool wasPaused;
 -(void) songTitle
 {
 
-    
     NSString *stringCurrentTitle=gTitles[gCurrentSong];
-
-    //[labelScore setColor:ccBLACK];
-
     [labelTitle setString:stringCurrentTitle];
 
 }
@@ -236,10 +280,7 @@ bool wasPaused;
 }
 - (void) gCierraCortinas
 {
-    
-    CCSprite *cortina = [CCSprite spriteWithFile:@"1.png" ];
-    cortina.position = ccp(size.width/2,size.height*2);
-    [cortinasLayer addChild:cortina];
+
     
     id actionMove = [CCMoveTo actionWithDuration:2
                                         position:ccp(0,0)
