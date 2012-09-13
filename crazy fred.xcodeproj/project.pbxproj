@@ -204,6 +204,10 @@
 		D1C29C0615FA9AE5000FB7C0 /* OCRAEXT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D1C29C0415FA9AE5000FB7C0 /* OCRAEXT.TTF */; };
 		D1C29C0715FA9AE5000FB7C0 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1C29C0515FA9AE5000FB7C0 /* OCRAStd.otf */; };
 		D1C29C1715FC4856000FB7C0 /* global.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C29C1615FC4855000FB7C0 /* global.m */; };
+		D1FB0DEE1602857C009E868F /* perdedor.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FB0DEB16028579009E868F /* perdedor.png */; };
+		D1FB0DEF1602857C009E868F /* poste.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FB0DEC1602857A009E868F /* poste.png */; };
+		D1FB0DF01602857C009E868F /* premio-intermedio.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FB0DED1602857C009E868F /* premio-intermedio.png */; };
+		D1FB0DF2160285A5009E868F /* ganador.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FB0DF1160285A4009E868F /* ganador.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -528,6 +532,10 @@
 		D1C29C0515FA9AE5000FB7C0 /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAStd.otf; sourceTree = "<group>"; };
 		D1C29C1515FC4854000FB7C0 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
 		D1C29C1615FC4855000FB7C0 /* global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = global.m; sourceTree = "<group>"; };
+		D1FB0DEB16028579009E868F /* perdedor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perdedor.png; sourceTree = "<group>"; };
+		D1FB0DEC1602857A009E868F /* poste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poste.png; sourceTree = "<group>"; };
+		D1FB0DED1602857C009E868F /* premio-intermedio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premio-intermedio.png"; sourceTree = "<group>"; };
+		D1FB0DF1160285A4009E868F /* ganador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ganador.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -591,6 +599,10 @@
 			isa = PBXGroup;
 			children = (
 				D1637BEF15F717E40097AFB5 /* e1.png */,
+				D1FB0DF1160285A4009E868F /* ganador.png */,
+				D1FB0DEB16028579009E868F /* perdedor.png */,
+				D1FB0DEC1602857A009E868F /* poste.png */,
+				D1FB0DED1602857C009E868F /* premio-intermedio.png */,
 				D1637BF015F717E40097AFB5 /* e2.png */,
 				D1637BF115F717E40097AFB5 /* e3.png */,
 				D1637BF215F717E40097AFB5 /* e4.png */,
@@ -1229,6 +1241,10 @@
 				D1C29C0615FA9AE5000FB7C0 /* OCRAEXT.TTF in Resources */,
 				D1C29C0715FA9AE5000FB7C0 /* OCRAStd.otf in Resources */,
 				D1BE04581601C962008753CD /* flecha1.png in Resources */,
+				D1FB0DEE1602857C009E868F /* perdedor.png in Resources */,
+				D1FB0DEF1602857C009E868F /* poste.png in Resources */,
+				D1FB0DF01602857C009E868F /* premio-intermedio.png in Resources */,
+				D1FB0DF2160285A5009E868F /* ganador.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

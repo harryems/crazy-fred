@@ -16,9 +16,11 @@
     CCSprite *medidor;
     CCSprite *aguja;
     CCSprite *cortina;
+    CCSprite *cortinaFinal;
     CCLabelTTF *labelScore;
     CCLabelTTF *labelTitle;
     CCLabelTTF *labelCurrenScore;
+    
     int count;
     int paso;
     int internalPaso;

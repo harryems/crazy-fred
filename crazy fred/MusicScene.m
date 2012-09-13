@@ -172,7 +172,24 @@ bool wasPaused;
     [self songTitle];
     
     
-} 
+}
+
+-(void) discInIz
+{
+    CCSprite *disc2 = [CCSprite spriteWithFile:@"d7.png" ];
+    disc2.position = ccp(size.width+size.width/2,size.height/2);
+    [discLayer addChild:disc2];
+    
+    
+    disc.position = ccp(size.width+size.width/2,size.height/2);
+    [discLayer addChild:disc];
+    
+
+}
+
+
+
+
 - (void) Prev: (CCMenuItem  *) menuItem
 {
     gCurrentSong--;
