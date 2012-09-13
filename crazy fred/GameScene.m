@@ -72,11 +72,8 @@ int gCurrentSong;
 
         [self BuildBackground];
         [self BuildInstrumentos];
-        //[self gameAbreCortinas];
-        
         [self generaSecuencia];
         [self gameAbreCortinas];
-        //[self muestrasecuencia];
         
 
 
@@ -86,15 +83,10 @@ int gCurrentSong;
 }
 
 -(void) avanzaAguja:(int)time{
-    CCSprite *aguja=[CCSprite spriteWithFile:@"flecha1.png"];
-    aguja.scale=0.9;
-    aguja.position = ccp(930, 80);
-    [agujaLayer addChild:aguja];
 
+    id actionMove = [CCRotateBy  actionWithDuration:1 angle:10*time];
+    [aguja runAction:[CCSequence actions:actionMove,nil]];
     
-id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
-[agujaLayer runAction:[CCSequence actions:actionMove,nil]];
-
 }
 
 
@@ -104,8 +96,6 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
     {
         int temp= (arc4random() % 9) + 1;
         [array addObject:[NSNumber numberWithInt:temp]];
-        //NSLog(@"array %d",[[array objectAtIndex:i ]integerValue]);
-
     }
     
 }
@@ -116,7 +106,6 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
     if (imuestra<=paso) {
         [[CCTouchDispatcher sharedDispatcher] setDispatchEvents:NO];  //mientras se muestra la secuencia el usuario no puede tocar los botones
         
-        //NSString *stringtmp=[NSString stringWithFormat:@"ba%d", [[array objectAtIndex:imuestra]integerValue]];
         CCMenuItemImage *Itemtmp=[self valueForKey:[NSString stringWithFormat:@"ba%d", [[array objectAtIndex:imuestra]integerValue]]];
         
         
@@ -188,7 +177,6 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
 
 - (void) cierreFinal
 {
-   // [gamecortinasLayer removeAllChildrenWithCleanup:YES];
     CCSprite *cortinaFinal = [CCSprite spriteWithFile:@"r8.png" ];
     cortinaFinal.position = ccp(size.width/2,size.height*2);
     [gamecortinasFinal addChild:cortinaFinal];
@@ -227,36 +215,31 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
     ba7.tag=7;
     ba8.tag=8;
     ba9.tag=9;
-    //internalPaso=0;
     
 
 
         id pausa=[CCCallFunc actionWithTarget:self selector:@selector(pauseBackgroundMusic)];
         id resumen=[CCCallFunc actionWithTarget:self selector:@selector(resumeBackgroundMusic)];
         id delayMusic=[CCDelayTime actionWithDuration:0.5];
-     // [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
-    [CCCallFunc actionWithTarget:backGroundLayer selector:@selector(resumeBackgroundMusic)];
+       //[CCCallFunc actionWithTarget:backGroundLayer selector:@selector(resumeBackgroundMusic)];
+
 
     
-        //[self runAction:[CCSequence actions:resumen,delayMusic,pausa, nil]];
+        [self runAction:[CCSequence actions:resumen,delayMusic,pausa,nil]];
     
-        //[self runAction:[CCSequence actions:resumen,nil]];
     
 
-        NSLog(@"array %d\n",[[array objectAtIndex:internalPaso+1 ]integerValue]);
-        NSLog(@"tag %d\n",[sender tag ]);
 
     
         int tmp=[[array objectAtIndex:internalPaso+1]integerValue];
 
-        //if(internalPaso>=paso)
-        //muestra secuencia + 1 paso
+
     
         if( tmp != [sender tag ]  )
         {
              NSLog(@"Error!!!!");
-            //[self cierreFinal];
-            [self performSelector:@selector(cierreFinal)];  // equivocacion
+            [self cierreFinal];
+            //[self performSelector:@selector(cierreFinal)];  // equivocacion
         }
     
     internalPaso++;
@@ -265,8 +248,8 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
                 
         imuestra=0;
         paso++;
+        [self avanzaAguja:1];
         [self muestrasecuencia];
-        //[CCCallFunc actionWithTarget:self selector:@selector(muestrasecuencia)];
     
     }
 }
@@ -295,12 +278,10 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
     [backGroundLayer addChild:background];
     
     medidor = [CCSprite spriteWithFile:@"medidor.png"];
-    medidor.scale=0.9;
     medidor.position = ccp(930, 80);
     [medidorLayer addChild:medidor];
     
-    CCSprite *aguja=[CCSprite spriteWithFile:@"flecha1.png"];
-    aguja.scale=0.9;
+    aguja=[CCSprite spriteWithFile:@"flecha1.png"];
     aguja.position = ccp(930, 80);
     [agujaLayer addChild:aguja];
     

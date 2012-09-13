@@ -14,6 +14,7 @@
     CCLayer *medidorLayer, * instrumentosLayer, *backGroundLayer,*gamecortinasLayer,*agujaLayer,*titleLayer,*gamecortinasFinal;
     CCSprite *background;
     CCSprite *medidor;
+    CCSprite *aguja;
     CCLabelTTF *labelScore;
     int count;
     int paso;
