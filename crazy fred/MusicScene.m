@@ -50,13 +50,13 @@ bool wasPaused;
 
         
 
-        
-        [self addChild:discLayer];
         [self addChild:backGroundLayer];
+        [self addChild:discLayer];
         [self addChild:controlsLayer];
-        [self addChild:cortinasLayer];
         [self addChild:pauseLayer];
         [self addChild:titleLayer];
+        [self addChild:cortinasLayer];
+
         
         pauseLayer.visible=FALSE;
         [self BuildBackground];
@@ -131,14 +131,15 @@ bool wasPaused;
     CCMenu *MenuJugar = [CCMenu menuWithItems:btnJugar, nil];
     
     MenuJugar.position =CGPointMake(200, 30);
-    [controlsLayer addChild:MenuReproduccion];
-
-    [controlsLayer addChild:MenuJugar];
-    
-    
-    labelTitle = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:16];
-    [titleLayer addChild:labelTitle];
+    labelTitle = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:20];
     labelTitle.position =  ccp(size.width / 2 , 30);
+
+    
+    [titleLayer addChild:labelTitle];
+   
+    [controlsLayer addChild:MenuReproduccion];
+    
+    [controlsLayer addChild:MenuJugar];
     
 }
 
@@ -188,7 +189,7 @@ bool wasPaused;
     
     if (wasPaused)
     {
-       // [[SimpleAudioEngine sharedEngine] playBackgroundMusic ];
+        [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
     }
     else
     {

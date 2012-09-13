@@ -68,7 +68,6 @@
 		D1637C6015F717E50097AFB5 /* j1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1A15F717E50097AFB5 /* j1.png */; };
 		D1637C6115F717E50097AFB5 /* j2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1B15F717E50097AFB5 /* j2.png */; };
 		D1637C6215F717E50097AFB5 /* juego-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1C15F717E50097AFB5 /* juego-bg.png */; };
-		D1637C6315F717E50097AFB5 /* flecha1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1E15F717E50097AFB5 /* flecha1.png */; };
 		D1637C6415F717E50097AFB5 /* flecha2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1F15F717E50097AFB5 /* flecha2.png */; };
 		D1637C6515F717E50097AFB5 /* flecha3.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2015F717E50097AFB5 /* flecha3.png */; };
 		D1637C6615F717E50097AFB5 /* flecha4.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2115F717E50097AFB5 /* flecha4.png */; };
@@ -207,6 +206,7 @@
 		D16AD94E15F6775C00F9CF19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D16AD94D15F6775C00F9CF19 /* AppDelegate.m */; };
 		D16AD95115F6775C00F9CF19 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D16AD95015F6775C00F9CF19 /* RootViewController.m */; };
 		D16AD95415F6775C00F9CF19 /* InitLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D16AD95315F6775C00F9CF19 /* InitLayer.m */; };
+		D1BE04581601C962008753CD /* flecha1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1BE04571601C962008753CD /* flecha1.png */; };
 		D1C29C0615FA9AE5000FB7C0 /* OCRAEXT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D1C29C0415FA9AE5000FB7C0 /* OCRAEXT.TTF */; };
 		D1C29C0715FA9AE5000FB7C0 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1C29C0515FA9AE5000FB7C0 /* OCRAStd.otf */; };
 		D1C29C1715FC4856000FB7C0 /* global.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C29C1615FC4855000FB7C0 /* global.m */; };
@@ -274,7 +274,6 @@
 		D1637C1A15F717E50097AFB5 /* j1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = j1.png; sourceTree = "<group>"; };
 		D1637C1B15F717E50097AFB5 /* j2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = j2.png; sourceTree = "<group>"; };
 		D1637C1C15F717E50097AFB5 /* juego-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "juego-bg.png"; sourceTree = "<group>"; };
-		D1637C1E15F717E50097AFB5 /* flecha1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha1.png; sourceTree = "<group>"; };
 		D1637C1F15F717E50097AFB5 /* flecha2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha2.png; sourceTree = "<group>"; };
 		D1637C2015F717E50097AFB5 /* flecha3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha3.png; sourceTree = "<group>"; };
 		D1637C2115F717E50097AFB5 /* flecha4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha4.png; sourceTree = "<group>"; };
@@ -536,6 +535,7 @@
 		D16AD95215F6775C00F9CF19 /* InitLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitLayer.h; sourceTree = "<group>"; };
 		D16AD95315F6775C00F9CF19 /* InitLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitLayer.m; sourceTree = "<group>"; };
 		D16AD95515F6775C00F9CF19 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		D1BE04571601C962008753CD /* flecha1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha1.png; sourceTree = "<group>"; };
 		D1C29C0415FA9AE5000FB7C0 /* OCRAEXT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAEXT.TTF; sourceTree = "<group>"; };
 		D1C29C0515FA9AE5000FB7C0 /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAStd.otf; sourceTree = "<group>"; };
 		D1C29C1515FC4854000FB7C0 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
@@ -660,7 +660,7 @@
 		D1637C1D15F717E50097AFB5 /* medidor */ = {
 			isa = PBXGroup;
 			children = (
-				D1637C1E15F717E50097AFB5 /* flecha1.png */,
+				D1BE04571601C962008753CD /* flecha1.png */,
 				D1637C1F15F717E50097AFB5 /* flecha2.png */,
 				D1637C2015F717E50097AFB5 /* flecha3.png */,
 				D1637C2115F717E50097AFB5 /* flecha4.png */,
@@ -1222,7 +1222,6 @@
 				D1637C6015F717E50097AFB5 /* j1.png in Resources */,
 				D1637C6115F717E50097AFB5 /* j2.png in Resources */,
 				D1637C6215F717E50097AFB5 /* juego-bg.png in Resources */,
-				D1637C6315F717E50097AFB5 /* flecha1.png in Resources */,
 				D1637C6415F717E50097AFB5 /* flecha2.png in Resources */,
 				D1637C6515F717E50097AFB5 /* flecha3.png in Resources */,
 				D1637C6615F717E50097AFB5 /* flecha4.png in Resources */,
@@ -1253,6 +1252,7 @@
 				D1637CAC15F816EF0097AFB5 /* ac:dc.mp3 in Resources */,
 				D1C29C0615FA9AE5000FB7C0 /* OCRAEXT.TTF in Resources */,
 				D1C29C0715FA9AE5000FB7C0 /* OCRAStd.otf in Resources */,
+				D1BE04581601C962008753CD /* flecha1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

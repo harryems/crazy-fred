@@ -41,8 +41,9 @@ int gCurrentSong;
         
         size = [[CCDirector sharedDirector] winSize];
         count=1;
-        paso=6;
-        array = [NSMutableArray array];
+        paso=1;
+        imuestra=0;
+        array =  [[NSMutableArray array] retain];
 
         medidorLayer= [CCLayer node];
         backGroundLayer= [CCLayer node];
@@ -53,8 +54,11 @@ int gCurrentSong;
         titleLayer= [CCLayer node];
 
 
-        
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
 
+        [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic ];
+
+        
         [self addChild:backGroundLayer];
         [self addChild:instrumentosLayer];
         [self addChild:titleLayer];
@@ -68,14 +72,15 @@ int gCurrentSong;
 
         [self BuildBackground];
         [self BuildInstrumentos];
-        [self gameAbreCortinas];
+        //[self gameAbreCortinas];
         
         [self generaSecuencia];
+        [self gameAbreCortinas];
+        //[self muestrasecuencia];
         
-        [self muestrasecuencia];
+
 
         
-        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     }
 	return self;
 }
@@ -86,6 +91,7 @@ int gCurrentSong;
     aguja.position = ccp(930, 80);
     [agujaLayer addChild:aguja];
 
+    
 id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
 [agujaLayer runAction:[CCSequence actions:actionMove,nil]];
 
@@ -106,39 +112,37 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
   
 -(void)muestrasecuencia
 {
-    internalPaso=1;      //cada que se muestra la secuencia el usuario debe ir desde el principio
-    [[CCTouchDispatcher sharedDispatcher] setDispatchEvents:NO];  //mientras se muestra la secuencia el usuario no puede tocar los botones
-
-    for(int imuestra=1; imuestra <= paso ;imuestra++)
+    imuestra++;
+    if (imuestra<=paso) {
+        [[CCTouchDispatcher sharedDispatcher] setDispatchEvents:NO];  //mientras se muestra la secuencia el usuario no puede tocar los botones
+        
+        //NSString *stringtmp=[NSString stringWithFormat:@"ba%d", [[array objectAtIndex:imuestra]integerValue]];
+        CCMenuItemImage *Itemtmp=[self valueForKey:[NSString stringWithFormat:@"ba%d", [[array objectAtIndex:imuestra]integerValue]]];
+        
+        
+        id delay=[CCDelayTime actionWithDuration:gTimingLevel[gCurrentSong]]; //segun el nivel el tiempo
+        id select= [CCCallFuncND actionWithTarget:self
+                                         selector:@selector(seleccionar:data:)
+                                             data:Itemtmp
+                    ];
+        
+        id unselect= [CCCallFuncND actionWithTarget:self
+                                           selector:@selector(deseleccionar:data:)
+                                               data:Itemtmp
+                      ];
+        id recursive =[CCCallFunc actionWithTarget:self selector:@selector(muestrasecuencia)];
+        [instrumentosLayer runAction:[CCSequence actions: select,delay,unselect,delay,recursive,nil]];
+        
+        
+    }
+    else
     {
-        
-        //NSLog(@"muestra %d\n",imuestra);
-        //NSLog(@"paso %d\n",paso);
-        //NSLog(@"array %d",[[array objectAtIndex:imuestra ]integerValue]);
-        
-    int tm=[[array objectAtIndex:paso]integerValue];
-    NSString *stringtmp=[NSString stringWithFormat:@"ba%d", tm];
-    CCMenuItemImage *Itemtmp=[self valueForKey:stringtmp];
-    
-    
-    //id delay=[CCDelayTime actionWithDuration:gTimingLevel[gCurrentSong]]; //segun el nivel el tiempo entre se selecciona y deselecciona sera menor
-    id delay=[CCDelayTime actionWithDuration:2];
-
-    id select= [CCCallFuncND actionWithTarget:self
-                                     selector:@selector(seleccionar:data:)
-                                         data:Itemtmp
-                ];
-    
-    id unselect= [CCCallFuncND actionWithTarget:self
-                                       selector:@selector(deseleccionar:data:)
-                                           data:Itemtmp
-                  ];
-    
-    [self runAction:[CCSequence actions: select,delay,unselect,nil]];
+        [[CCTouchDispatcher sharedDispatcher] setDispatchEvents:YES];
+        internalPaso=0;
     
     }
-    
-        [[CCTouchDispatcher sharedDispatcher] setDispatchEvents:YES];//al terminar de mostrar la secuencia se habilita nuevamente el tocar la pantalla
+
+
 
     
     
@@ -174,7 +178,11 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
     id actionMove = [CCMoveTo actionWithDuration:2
                                         position:ccp(0,size.height+(size.height/2))
                      ];
-    [gamecortinasLayer runAction:[CCSequence actions:actionMove,nil]];
+    
+    [[CCTouchDispatcher sharedDispatcher] setDispatchEvents:NO];
+    id delay=[CCDelayTime actionWithDuration:1];
+    id secuencia=[CCCallFunc actionWithTarget:self selector:@selector(muestrasecuencia)];
+    [gamecortinasLayer runAction:[CCSequence actions:actionMove,delay,secuencia,nil]];
 }
 
 
@@ -183,7 +191,7 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
    // [gamecortinasLayer removeAllChildrenWithCleanup:YES];
     CCSprite *cortinaFinal = [CCSprite spriteWithFile:@"r8.png" ];
     cortinaFinal.position = ccp(size.width/2,size.height*2);
-    [gamecortinasLayer addChild:cortinaFinal];
+    [gamecortinasFinal addChild:cortinaFinal];
     
     id actionMove = [CCMoveTo actionWithDuration:2
                                         position:ccp(0,0)
@@ -191,7 +199,7 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
     id marcador=[CCCallFunc actionWithTarget:self selector:@selector(muestraMarcador)];
 
     
-    [gamecortinasLayer runAction:[CCSequence actions:actionMove,marcador,nil]];
+    [gamecortinasFinal runAction:[CCSequence actions:actionMove,marcador,nil]];
 }
 
 
@@ -219,28 +227,63 @@ id actionMove = [CCRotateBy  actionWithDuration:1 angle:time];
     ba7.tag=7;
     ba8.tag=8;
     ba9.tag=9;
+    //internalPaso=0;
+    
 
-    NSLog(@"array %d",[[array objectAtIndex:internalPaso ]integerValue]);
+
+        id pausa=[CCCallFunc actionWithTarget:self selector:@selector(pauseBackgroundMusic)];
+        id resumen=[CCCallFunc actionWithTarget:self selector:@selector(resumeBackgroundMusic)];
+        id delayMusic=[CCDelayTime actionWithDuration:0.5];
+     // [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
+    [CCCallFunc actionWithTarget:backGroundLayer selector:@selector(resumeBackgroundMusic)];
+
     
-    //int tmp=[[array objectAtIndex:internalPaso]integerValue];
+        //[self runAction:[CCSequence actions:resumen,delayMusic,pausa, nil]];
     
+        //[self runAction:[CCSequence actions:resumen,nil]];
     
+
+        NSLog(@"array %d\n",[[array objectAtIndex:internalPaso+1 ]integerValue]);
+        NSLog(@"tag %d\n",[sender tag ]);
+
     
-    
-    //NSLog(@"tag %d\n",[sender tag ]);
-    //NSLog(@"array %d",[[array objectAtIndex:1]integerValue]);
-    //NSLog(@"%d",tmp);
-    
-    //if(internalPaso>=paso)
+        int tmp=[[array objectAtIndex:internalPaso+1]integerValue];
+
+        //if(internalPaso>=paso)
         //muestra secuencia + 1 paso
     
-  //if( tmp !=  [sender tag ]  )
-   //   [self cierreFinal];  // equivocacion
-    internalPaso++;          // continua con una secuencia mas
-      
+        if( tmp != [sender tag ]  )
+        {
+             NSLog(@"Error!!!!");
+            //[self cierreFinal];
+            [self performSelector:@selector(cierreFinal)];  // equivocacion
+        }
+    
+    internalPaso++;
+    if (internalPaso==paso)
+    {
+                
+        imuestra=0;
+        paso++;
+        [self muestrasecuencia];
+        //[CCCallFunc actionWithTarget:self selector:@selector(muestrasecuencia)];
+    
+    }
 }
 
+-(void) pausebackground
+{
+    [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
 
+
+}
+
+-(void) resumenbackground
+{
+
+    [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
+
+}
 
 
 

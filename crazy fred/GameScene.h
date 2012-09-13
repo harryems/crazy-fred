@@ -18,6 +18,7 @@
     int count;
     int paso;
     int internalPaso;
+    int imuestra;
     CGSize size;
     //NSMutableArray *secuencia;
     NSMutableArray *array;
@@ -39,7 +40,7 @@
 -(void) muestrasecuencia;
 
 
--(void) cierreFinal;
+//-(void) cierreFinal;
 -(void) muestraMarcador;
 -(void) BuildBackground;
 -(void) BuildInstrumentos;
