@@ -225,7 +225,7 @@ int gCurrentSong;
 
 
     
-        [self runAction:[CCSequence actions:resumen,delayMusic,pausa,nil]];
+      //  [self runAction:[CCSequence actions:resumen,delayMusic,pausa,nil]];
     
     
 
