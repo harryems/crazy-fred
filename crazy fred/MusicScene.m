@@ -71,9 +71,10 @@ bool wasPaused;
         [self BuildControls];
         [self BuildPause];
         [self BuilMenu];
-       
+
         [self gAbreCortinas];
-      
+        //[self updatePausa];
+ 
       
 
         
@@ -225,11 +226,7 @@ bool wasPaused;
 
 }
 
-- (void) Jugar: (CCMenuItem  *) menuItem
 
-{
-    [self gCierraCortinas];
-}
 
 -(void) BuildBackground
 {
@@ -254,19 +251,7 @@ bool wasPaused;
     
 }
 
-- (void) Next: (CCMenuItem  *) menuItem
-{
-    gCurrentSong++;
-    if (gCurrentSong>3)gCurrentSong=0;
-    if (isplaying){
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
-    }
-    [self updatePausa];
 
-    [self songTitle];
-    
-    
-}
 
 -(void) discInIz
 {
@@ -297,6 +282,81 @@ bool wasPaused;
     
 }
 
+
+
+
+
+
+
+
+
+
+-(void)sacarDiscoDer{
+    disc.visible = YES;
+    [disc runAction:[CCMoveTo actionWithDuration:2 position:ccp(size.width*2,size.height/2)]];
+}
+
+-(void) entraDiscoIz
+{
+    disc.visible = YES;
+    [disc runAction:[CCMoveTo actionWithDuration:2 position:ccp(size.width/2,size.height/2)]];
+    
+}
+-(void) recolocarDiscoDer
+{
+    disc.visible = NO;
+    disc.position = ccp(0,size.height/2);
+    [disc runAction:[CCMoveTo actionWithDuration:0 position:ccp(size.width,size.height/2)]];
+}
+
+-(void) discInDer
+{
+    id actionRecolocarDisco=[CCCallFunc actionWithTarget:self selector:@selector(recolocarDiscoDer)];
+    id actionSacarDisco = [CCCallFunc actionWithTarget:self selector:@selector(sacarDiscoDer)];
+    id actionEntraDisco = [CCCallFunc actionWithTarget:self selector:@selector(entraDiscoIz)];
+    
+    [discLayer runAction:[CCSequence actions:actionSacarDisco,[CCDelayTime actionWithDuration:1.0],actionRecolocarDisco,actionEntraDisco, nil]];
+}
+
+
+- (void) Next: (CCMenuItem  *) menuItem
+{
+    gCurrentSong++;
+    if (gCurrentSong>3)gCurrentSong=0;
+    if (isplaying){
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
+    }
+    [self updatePausa];
+    [self discInDer];
+    [self songTitle];
+    
+    
+}
+
+
+- (void) Prev: (CCMenuItem  *) menuItem
+{
+    gCurrentSong--;
+    if (gCurrentSong<0)gCurrentSong=3;
+    if (isplaying){
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
+    }
+    [self updatePausa];
+    [self discInIz];
+    [self songTitle];
+    
+}
+
+
+- (void) Jugar: (CCMenuItem  *) menuItem
+
+{
+    [self sacarDisco];
+    [self gCierraCortinas];
+}
+
+
+
 -(void) removeSprite
 {
     //[discLayer removeChild:disc cleanup:NO];
@@ -315,68 +375,6 @@ bool wasPaused;
     disc = [CCSprite spriteWithFile:@"d7.png" ];
     disc.position = ccp(size.width+size.width/2,size.height/2);
     [discLayer addChild:disc];
-}
-
-
-
-
-- (void) Prev: (CCMenuItem  *) menuItem
-{
-    gCurrentSong--;
-    if (gCurrentSong<0)gCurrentSong=3;
-    if (isplaying){
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
-    }
-    [self updatePausa];
-
-    [self discInIz];
-    
-    //CCSprite *disc2 = [CCSprite spriteWithFile:@"d7.png" ];
-    //disc2.position = ccp(size.width+size.width/2,size.height/2);
-    //[discLayer addChild:disc2];
-    
-    //CCSprite *disc = [CCSprite spriteWithFile:@"d7.png" ];
-    //disc.position = ccp(size.width+size.width/2,size.height/2);
-    //[discLayer addChild:disc];
-
-   /*
-    
-    
-    id actionMove = [CCMoveTo actionWithDuration:2
-                                        position:ccp(-size.width,0)
-                     ];
-    id addDisc2= [CCCallFuncND actionWithTarget:self
-                                       selector:@selector(addtolayer:data:)
-                                           data:disc2
-                  ];
-    id addDisc= [CCCallFuncND actionWithTarget:self
-                                       selector:@selector(addtolayer:)
-                                           data:disc
-                  ];
-    id removeDisc2= [CCCallFuncND actionWithTarget:self
-                                      selector:@selector(removetolayer:)
-                                          data:disc
-                 ];
-    
-    */
-    //id moveaction=[discLayer runAction:[CCSequence actions:actionMove,nil]];
-    
-   // [discLayer runAction:[CCSequence actions:addDisc2,actionMove,nil]];
-
-    [self songTitle];
-    //[self discIn];
-    
-}
-
--(void) addtolayer:(id)sender data:(CCSprite *)sprite
-{
-    [discLayer addChild:sprite];
-
-}
--(void) removetolayer:(id)sender data:(CCSprite *)sprite
-{
-    [discLayer removeChild:sprite cleanup:YES];
-    
 }
 
 

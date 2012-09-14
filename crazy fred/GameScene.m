@@ -8,7 +8,6 @@
 #import "SimpleAudioEngine.h"
 #import "GameScene.h"
 #import "global.h"
-#import "FacebookScorer.h"
  
 int gCurrentSong;
 
@@ -113,9 +112,9 @@ int gCurrentSong;
 }
 
 
--(void) avanzaAguja:(int)time{
+-(void) avanzaAguja{
 
-    [aguja runAction:[CCRotateBy  actionWithDuration:1 angle:10*time]];
+    [aguja runAction:[CCRotateBy  actionWithDuration:1 angle:160/gTopLevel[gCurrentSong]]];
     
 }
 
@@ -133,7 +132,7 @@ int gCurrentSong;
 -(void) actualizaScore
 {
 
-    gScore=gScore+(paso*(2-gTimingLevel[gCurrentSong])*100 );
+    gScore=gScore+(internalPaso*(2-gTimingLevel[gCurrentSong])*100 );
     labelCurrenScore.string=[NSString stringWithFormat:@"%6.0f",gScore];
 
     
@@ -247,7 +246,6 @@ int gCurrentSong;
 -(void) Share:(CCMenuItem  *) menuItem
 {
     
-    [[FacebookScorer sharedInstance] postToWallWithDialogNewHighscore:123];
     
 }
 
@@ -315,7 +313,7 @@ int gCurrentSong;
 - (void) cierreFinal
 {
    
-    
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     id cortinas=[CCCallFunc actionWithTarget:self selector:@selector(cierreCortina)];
 
     id delayMusic=[CCDelayTime actionWithDuration:2];
@@ -371,17 +369,19 @@ int gCurrentSong;
     
         if( tmp != [sender tag ]  )
         {
-            //if (internalPaso/tamoño del arroglo <0.55){
+            if (internalPaso/gTopLevel[gCurrentSong] <0.55){
                 gResultado=3;
-            //}
-            //else
-            //    gResultado=2;
+            }
+            else
+                gResultado=2;
             //[CCCallFunc actionWithTarget:self selector:@selector(cierreFinal)];
             [self cierreFinal];
         }
         else{
     
                 internalPaso++;
+            [self avanzaAguja];
+            [self actualizaScore];
                 //if (internalPaso==paso)
                if (internalPaso==gTopLevel[gCurrentSong])
                 {

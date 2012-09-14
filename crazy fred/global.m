@@ -38,7 +38,7 @@ float gTimingLevel[] =
 
 
 int gTopLevel[] ={
-    2,
+    7,
     10,
     15,
     20

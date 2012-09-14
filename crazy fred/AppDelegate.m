@@ -13,7 +13,6 @@
 #import "InitLayer.h"
 #import "RootViewController.h"
 
-#import "FacebookScorer.h"
 
 @implementation AppDelegate
 
@@ -157,14 +156,5 @@
 	[window release];
 	[super dealloc];
 }
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [[[FacebookScorer sharedInstance] facebook] handleOpenURL:url];
-}
-
-// For 4.2+ support
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [[[FacebookScorer sharedInstance] facebook] handleOpenURL:url];
-}
-
 
 @end
