@@ -8,14 +8,31 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "CCMenuItemLabelAndImage.h"
 
 @interface MusicScene : CCLayer {
 
     CCLayer *discLayer, * controlsLayer,*cortinasLayer, *backGroundLayer,*titleLayer,*pauseLayer,
-    *discLayerOut;
+    *discLayerOut,*menuListLayer;
     CCSprite *background;
     CCSprite *disc;
+    CCSprite *disc2;
     CCLabelTTF *labelTitle;
+    
+    CCLabelTTF *labelSong1;
+    CCLabelTTF *labelSong2;
+    CCLabelTTF *labelSong3;
+    CCLabelTTF *labelSong4;
+    
+    CCMenuItemLabelAndImage *itemSong1;
+    CCMenuItemLabelAndImage *itemSong2;
+    CCMenuItemLabelAndImage *itemSong3;
+    CCMenuItemLabelAndImage *itemSong4;
+    
+    CCMenu *menulist;
+    bool isUp;
+    
+    
     bool isplaying;
     bool wasPaused;
     CGSize size;
@@ -30,6 +47,7 @@
 -(void) songTitle;
 -(void) gAbreCortinas;
 -(void) gCierraCortinas;
+-(void) BuilMenu;
 @end
 
 

@@ -36,11 +36,12 @@ float gTimingLevel[] =
 };
 
 int gTopLevel[] ={
-    7,
+    2,
     10,
     15,
     20
 };
+
 int gResultado;
 
 

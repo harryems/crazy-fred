@@ -68,19 +68,13 @@
 {
     
     
-    
-    CCSprite *sprinteInicio = [CCSprite spriteWithFile:@"p3.png"];
-    [sprinteInicio setPosition:CGPointMake(size.width / 2, size.height / 2)];
-    [luzLayer addChild:sprinteInicio];
-    
+
     CCAnimation *animationInicio = [CCAnimation animation];
+    [animationInicio addFrameWithFilename:@"p3.png"];
     [animationInicio addFrameWithFilename:@"p2.png"];
     [animationInicio addFrameWithFilename:@"p1.png"];
-    
-    
-    CCAnimate *animat = [CCAnimate actionWithDuration:1 animation:animationInicio restoreOriginalFrame:NO];
-    //[luzLayer runAction:animat];
-    
+    CCAnimate *animateLuz = [CCAnimate actionWithDuration:2 animation:animationInicio restoreOriginalFrame:NO];
+    [spriteLuz runAction:animateLuz];
     
     
 }
@@ -92,6 +86,15 @@
     background.position = ccp(size.width/2, size.height/2);
     [backGroundLayer addChild:background]; // añadimos el sprite a la capa l1
     
+    
+    spriteLuz = [CCSprite spriteWithFile:@"p3.png"];
+    [spriteLuz setPosition:CGPointMake(size.width / 2, size.height / 2)];
+    [luzLayer addChild:spriteLuz];
+    
+    
+    CCSprite *cortina = [CCSprite spriteWithFile:@"1.png" ];
+    cortina.position = ccp(size.width/2,size.height*2);
+    [cortinasLayer addChild:cortina];
 }
 
 
@@ -109,10 +112,6 @@
 
 - (void) acceso: (CCMenuItem  *) menuItem
 {
-    
-    CCSprite *cortina = [CCSprite spriteWithFile:@"1.png" ];
-    cortina.position = ccp(size.width/2,size.height*2);
-    [cortinasLayer addChild:cortina];
     
     id actionMove = [CCMoveTo actionWithDuration:2
                                         position:ccp(0,-size.height-(size.height/2))

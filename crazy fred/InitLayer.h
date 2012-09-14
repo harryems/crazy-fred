@@ -15,6 +15,7 @@
 {
     CCLayer *controlsLayer,*cortinasLayer, *backGroundLayer,*luzLayer;
     CCSprite *background;
+    CCSprite *spriteLuz;
     CGSize size;
 
 }

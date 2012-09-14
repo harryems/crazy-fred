@@ -56,15 +56,15 @@ int gCurrentSong;
 
 
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
-
         [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic ];
 
+        cortina = [CCSprite spriteWithFile:@"1.png" ];
+        cortina.position = ccp(size.width/2,size.height/2);
+        [gamecortinasLayer addChild:cortina];
         
         [self addChild:backGroundLayer];
         [self addChild:instrumentosLayer];
         [self addChild:titleLayer];
-
-
         [self addChild:medidorLayer];
         [self addChild:agujaLayer];
         [self addChild:gamecortinasLayer];
@@ -75,18 +75,15 @@ int gCurrentSong;
         [self BuildInstrumentos];
         [self generaSecuencia];
         [self gameAbreCortinas];
-        
-
-
-        
-    }
+        }
 	return self;
 }
 
+
+
 -(void) avanzaAguja:(int)time{
 
-    id actionMove = [CCRotateBy  actionWithDuration:1 angle:10*time];
-    [aguja runAction:[CCSequence actions:actionMove,nil]];
+    [aguja runAction:[CCRotateBy  actionWithDuration:1 angle:10*time]];
     
 }
 
@@ -179,9 +176,7 @@ int gCurrentSong;
 
 - (void) gameAbreCortinas
 {
-    cortina = [CCSprite spriteWithFile:@"1.png" ];
-    cortina.position = ccp(size.width/2,size.height/2);
-    [gamecortinasLayer addChild:cortina];
+
     
     id actionMove = [CCMoveTo actionWithDuration:2
                                         position:ccp(0,size.height+(size.height/2))
@@ -195,25 +190,36 @@ int gCurrentSong;
 
 - (void) abreCortinas
 {
-
     
-    id actionMove = [CCMoveTo actionWithDuration:2
-                                        position:ccp(0,size.height+(size.height/2))
-                     ];
-    
-    [gamecortinasLayer runAction:[CCSequence actions:actionMove,nil]];
+    [gamecortinasLayer runAction:[CCMoveTo actionWithDuration:2
+                                           position:ccp(0,size.height+(size.height/2))
+                                  ]];
 }
 
 
 - (void) cierreCortina
 {
     
-    id actionMove = [CCMoveTo actionWithDuration:2
-                                        position:ccp(0,0)
-                     ];
+    [gamecortinasLayer runAction:[CCMoveTo actionWithDuration:2
+                                           position:ccp(0,0)
+                                  ]];
     
-    [gamecortinasLayer runAction:[CCSequence actions:actionMove,nil]];
+}
+-(void) Replace:(CCMenuItem  *) menuItem
+{
     
+    [[CCDirector sharedDirector] replaceScene:[MusicScene scene]];
+    
+}
+
+
+-(void) BuildRetrai
+{
+    CCMenuItemImage *btnJugar = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png" selectedImage:@"btnjugar-over.png" target:self selector:@selector(Replace:)];
+    MenuRetrai = [CCMenu menuWithItems:btnJugar, nil];
+    MenuRetrai.position =CGPointMake(size.width/2, 50);
+    [gamecortinasLayer addChild:MenuRetrai];
+
 }
 
 -(void) cierreFinalCandados
@@ -224,26 +230,36 @@ int gCurrentSong;
             cortinaFinal = [CCSprite spriteWithFile:@"ganador.png" ];
             break;
         case 2:
-            cortinaFinal = [CCSprite spriteWithFile:@"perdedor.png" ];
+            cortinaFinal = [CCSprite spriteWithFile:@"premio-intermedio.png" ];
+            [self BuildRetrai];
             break;
         case 3:
-            cortinaFinal = [CCSprite spriteWithFile:@"ganador.png" ];
+            cortinaFinal = [CCSprite spriteWithFile:@"perdedor.png" ];
+            [self BuildRetrai];
+
+            
             break;
         default:
             break;
     }
     
-    //CCSprite *cortinaFinal = [CCSprite spriteWithFile:@"r9.png" ];
+    
+    CCSprite *poste1=[CCSprite spriteWithFile:@"poste.png" ];
+    CCSprite *poste2=[CCSprite spriteWithFile:@"poste.png" ];
+    poste1.position = ccp(size.width/2-(size.width/4),size.height*2);
+    poste2.position = ccp(size.width/2+(size.width/4),size.height*2);
+    
+    [gamecortinasFinal addChild:poste1];
+    [gamecortinasFinal addChild:poste2];
+    
+    
+
+    
     cortinaFinal.position = ccp(size.width/2,size.height*2);
     [gamecortinasFinal addChild:cortinaFinal];
-    
-    id actionMove = [CCMoveTo actionWithDuration:2
-                                        position:ccp(0,-size.height-(size.height/2))
-                     ];
-    //id marcador=[CCCallFunc actionWithTarget:self selector:@selector(muestraMarcador)];
-    
-    //[gamecortinasFinal runAction:[CCSequence actions:actionMove,marcador,nil]];
-    [gamecortinasFinal runAction:[CCSequence actions:actionMove,nil]];
+    [gamecortinasFinal runAction:[CCMoveTo actionWithDuration:2
+                                           position:ccp(0,-size.height-(size.height/2))
+                                  ]];
 
 
 }
@@ -252,13 +268,13 @@ int gCurrentSong;
 {
    
     
-    id actionMove = [CCMoveTo actionWithDuration:2
-                                        position:ccp(0,0)
-                     ];
+    id cortinas=[CCCallFunc actionWithTarget:self selector:@selector(cierreCortina)];
+
+    id delayMusic=[CCDelayTime actionWithDuration:2];
 
     id candados=[CCCallFunc actionWithTarget:self selector:@selector(cierreFinalCandados)];
 
-    [gamecortinasLayer runAction:[CCSequence actions:actionMove,candados,nil]];
+    [gamecortinasLayer runAction:[CCSequence actions:cortinas,delayMusic,candados,nil]];
 
 }
 
@@ -305,15 +321,13 @@ int gCurrentSong;
     
         if( tmp != [sender tag ]  )
         {
-             NSLog(@"Error!!!!");
-            
-            labelScore = [CCLabelTTF labelWithString:@"Perdiste, intentalo de nuevo" fontName:@"OCRAEXT" fontSize:50 ];
-            gResultado=2;
-            id cierre=[CCCallFunc actionWithTarget:self selector:@selector(cierreFinal)];
-
-            [self runAction:[CCSequence actions:cierre,nil]];
-
-            //[self performSelector:@selector(cierreFinal)];  // equivocacion
+            //if (internalPaso/tamoño del arroglo <0.55){
+                gResultado=3;
+            //}
+            //else
+            //    gResultado=2;
+            //[CCCallFunc actionWithTarget:self selector:@selector(cierreFinal)];
+            [self cierreFinal];
         }
         else{
     
@@ -322,21 +336,8 @@ int gCurrentSong;
                if (internalPaso==gTopLevel[gCurrentSong])
                 {
                     gResultado=1;
-                    labelScore = [CCLabelTTF labelWithString:@"Ganaste, compartelo con tus amigos" fontName:@"OCRAEXT" fontSize:50 ];
-                    id cierre=[CCCallFunc actionWithTarget:self selector:@selector(cierreFinal)];
-                    [self runAction:[CCSequence actions:cierre,nil]];
-                    
-                 /*
-                    imuestra=0;
-                    paso++;
-                    [self actualizaScore];
-                    
-                    id delay=[CCDelayTime actionWithDuration:1];
-                    [self avanzaAguja:1];
+                    [self cierreFinal];
 
-                    id secuencia=[CCCallFunc actionWithTarget:self selector:@selector(muestrasecuencia)];
-                    [self runAction:[CCSequence actions:delay,secuencia,nil]];
-                  */
                 }
             
         }
@@ -411,11 +412,7 @@ int gCurrentSong;
     
     [Instrumentos  alignItemsInColumns:[NSNumber numberWithInt:3], [NSNumber numberWithInt:3],[NSNumber numberWithInt:3], nil];
     Instrumentos.position =CGPointMake(size.width / 2, size.height / 2);
-    
     Instrumentos.scale=0.95;
-    //CCMenu *row1 = [CCMenu menuWithItems:ba1,nil];
-    
-    //[row1 alignItemsHorizontallyWithPadding:1];
     [instrumentosLayer addChild:Instrumentos];
     
 }

@@ -19,7 +19,11 @@ extern float gTimingLevel[];
 extern int gTopLevel[];
 extern int gResultado;
 
+//extern int *gSecuencias[][];
+
+
 extern NSMutableArray *secuencia;
 //
+
 
 

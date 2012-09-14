@@ -65,8 +65,6 @@
 		D1637C5C15F717E50097AFB5 /* bgbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1615F717E50097AFB5 /* bgbtn.png */; };
 		D1637C5D15F717E50097AFB5 /* btninicio-on.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1715F717E50097AFB5 /* btninicio-on.png */; };
 		D1637C5E15F717E50097AFB5 /* btninicio-over.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1815F717E50097AFB5 /* btninicio-over.png */; };
-		D1637C6015F717E50097AFB5 /* j1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1A15F717E50097AFB5 /* j1.png */; };
-		D1637C6115F717E50097AFB5 /* j2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1B15F717E50097AFB5 /* j2.png */; };
 		D1637C6215F717E50097AFB5 /* juego-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C1C15F717E50097AFB5 /* juego-bg.png */; };
 		D1637C6A15F717E50097AFB5 /* medidor.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2515F717E50097AFB5 /* medidor.png */; };
 		D1637C6B15F717E50097AFB5 /* btnadelante-on.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2715F717E50097AFB5 /* btnadelante-on.png */; };
@@ -208,6 +206,9 @@
 		D1FB0DEF1602857C009E868F /* poste.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FB0DEC1602857A009E868F /* poste.png */; };
 		D1FB0DF01602857C009E868F /* premio-intermedio.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FB0DED1602857C009E868F /* premio-intermedio.png */; };
 		D1FB0DF2160285A5009E868F /* ganador.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FB0DF1160285A4009E868F /* ganador.png */; };
+		D1FB0DF81602F254009E868F /* btn_List.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FB0DF61602F254009E868F /* btn_List.png */; };
+		D1FB0DF91602F254009E868F /* btn_track.png in Resources */ = {isa = PBXBuildFile; fileRef = D1FB0DF71602F254009E868F /* btn_track.png */; };
+		D1FB0DFC160314DD009E868F /* CCMenuItemLabelAndImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FB0DFB160314DA009E868F /* CCMenuItemLabelAndImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -269,8 +270,6 @@
 		D1637C1615F717E50097AFB5 /* bgbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgbtn.png; sourceTree = "<group>"; };
 		D1637C1715F717E50097AFB5 /* btninicio-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btninicio-on.png"; sourceTree = "<group>"; };
 		D1637C1815F717E50097AFB5 /* btninicio-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btninicio-over.png"; sourceTree = "<group>"; };
-		D1637C1A15F717E50097AFB5 /* j1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = j1.png; sourceTree = "<group>"; };
-		D1637C1B15F717E50097AFB5 /* j2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = j2.png; sourceTree = "<group>"; };
 		D1637C1C15F717E50097AFB5 /* juego-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "juego-bg.png"; sourceTree = "<group>"; };
 		D1637C2515F717E50097AFB5 /* medidor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medidor.png; sourceTree = "<group>"; };
 		D1637C2715F717E50097AFB5 /* btnadelante-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnadelante-on.png"; sourceTree = "<group>"; };
@@ -536,6 +535,10 @@
 		D1FB0DEC1602857A009E868F /* poste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poste.png; sourceTree = "<group>"; };
 		D1FB0DED1602857C009E868F /* premio-intermedio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "premio-intermedio.png"; sourceTree = "<group>"; };
 		D1FB0DF1160285A4009E868F /* ganador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ganador.png; sourceTree = "<group>"; };
+		D1FB0DF61602F254009E868F /* btn_List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_List.png; sourceTree = "<group>"; };
+		D1FB0DF71602F254009E868F /* btn_track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_track.png; sourceTree = "<group>"; };
+		D1FB0DFA160314D8009E868F /* CCMenuItemLabelAndImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCMenuItemLabelAndImage.h; path = ../CCMenuItemLabelAndImage.h; sourceTree = "<group>"; };
+		D1FB0DFB160314DA009E868F /* CCMenuItemLabelAndImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCMenuItemLabelAndImage.m; path = ../CCMenuItemLabelAndImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -650,8 +653,6 @@
 				D1637C1615F717E50097AFB5 /* bgbtn.png */,
 				D1637C1715F717E50097AFB5 /* btninicio-on.png */,
 				D1637C1815F717E50097AFB5 /* btninicio-over.png */,
-				D1637C1A15F717E50097AFB5 /* j1.png */,
-				D1637C1B15F717E50097AFB5 /* j2.png */,
 				D1637C1C15F717E50097AFB5 /* juego-bg.png */,
 			);
 			path = juego;
@@ -669,6 +670,8 @@
 		D1637C2615F717E50097AFB5 /* track */ = {
 			isa = PBXGroup;
 			children = (
+				D1FB0DF61602F254009E868F /* btn_List.png */,
+				D1FB0DF71602F254009E868F /* btn_track.png */,
 				D1637C2715F717E50097AFB5 /* btnadelante-on.png */,
 				D1637C2815F717E50097AFB5 /* btnadelante-over.png */,
 				D1637C2915F717E50097AFB5 /* btnatras-over.png */,
@@ -742,6 +745,8 @@
 		D16AD7FA15F6775600F9CF19 /* crazy fred */ = {
 			isa = PBXGroup;
 			children = (
+				D1FB0DFA160314D8009E868F /* CCMenuItemLabelAndImage.h */,
+				D1FB0DFB160314DA009E868F /* CCMenuItemLabelAndImage.m */,
 				D1C29C1515FC4854000FB7C0 /* global.h */,
 				D1C29C1615FC4855000FB7C0 /* global.m */,
 				D16AD94C15F6775C00F9CF19 /* AppDelegate.h */,
@@ -1213,8 +1218,6 @@
 				D1637C5C15F717E50097AFB5 /* bgbtn.png in Resources */,
 				D1637C5D15F717E50097AFB5 /* btninicio-on.png in Resources */,
 				D1637C5E15F717E50097AFB5 /* btninicio-over.png in Resources */,
-				D1637C6015F717E50097AFB5 /* j1.png in Resources */,
-				D1637C6115F717E50097AFB5 /* j2.png in Resources */,
 				D1637C6215F717E50097AFB5 /* juego-bg.png in Resources */,
 				D1637C6A15F717E50097AFB5 /* medidor.png in Resources */,
 				D1637C6B15F717E50097AFB5 /* btnadelante-on.png in Resources */,
@@ -1245,6 +1248,8 @@
 				D1FB0DEF1602857C009E868F /* poste.png in Resources */,
 				D1FB0DF01602857C009E868F /* premio-intermedio.png in Resources */,
 				D1FB0DF2160285A5009E868F /* ganador.png in Resources */,
+				D1FB0DF81602F254009E868F /* btn_List.png in Resources */,
+				D1FB0DF91602F254009E868F /* btn_track.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1357,6 +1362,7 @@
 				D1637CA015F7503F0097AFB5 /* MusicScene.m in Sources */,
 				D1637CA315F750610097AFB5 /* GameScene.m in Sources */,
 				D1C29C1715FC4856000FB7C0 /* global.m in Sources */,
+				D1FB0DFC160314DD009E868F /* CCMenuItemLabelAndImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import "MusicScene.h"
 #import "GameScene.h"
 #import "global.h"
+#import "CCMenuItemLabelAndImage.h"
 
 bool isplaying;
 bool wasPaused;
@@ -47,11 +48,15 @@ bool wasPaused;
         cortinasLayer= [CCLayer node];
         titleLayer= [CCLayer node];
         pauseLayer=[CCLayer node];
+        menuListLayer=[CCLayer node];
+
 
         
 
         [self addChild:backGroundLayer];
         [self addChild:discLayer];
+        [self addChild:menuListLayer];
+
         [self addChild:controlsLayer];
         [self addChild:pauseLayer];
         [self addChild:titleLayer];
@@ -59,10 +64,12 @@ bool wasPaused;
 
         
         pauseLayer.visible=FALSE;
+        isUp=FALSE;
         [self BuildBackground];
         [self BuildControls];
         [self BuildPause];
-        
+        [self BuilMenu];
+       
         [self gAbreCortinas];
       
       
@@ -141,6 +148,78 @@ bool wasPaused;
     
 }
 
+-(void) BuilMenu
+{
+    
+    labelSong1 = [CCLabelTTF labelWithString:gTitles[0] fontName:@"OCRAEXT" fontSize:30];
+    labelSong2 = [CCLabelTTF labelWithString:gTitles[1] fontName:@"OCRAEXT" fontSize:30];
+    labelSong3 = [CCLabelTTF labelWithString:gTitles[2] fontName:@"OCRAEXT" fontSize:30];
+    labelSong4 = [CCLabelTTF labelWithString:gTitles[3] fontName:@"OCRAEXT" fontSize:30];
+
+    [labelSong1 setColor:ccBLACK];
+    [labelSong2 setColor:ccBLACK];
+    [labelSong3 setColor:ccBLACK];
+    [labelSong4 setColor:ccBLACK];
+    
+   CCMenuItemImage *topList= [CCMenuItemImage itemFromNormalImage:@"btn_track.png" selectedImage:@"btn_track.png" target:self selector:@selector(desplazaMenu:)];
+    
+    itemSong1 = [CCMenuItemLabelAndImage itemFromLabel:labelSong1 normalImage:@"btn_List.png" selectedImage:@"btn_List.png" disabledImage:@"btn_List.png" target:self selector:@selector(touchList:)];
+   itemSong2 = [CCMenuItemLabelAndImage itemFromLabel:labelSong2 normalImage:@"btn_List.png" selectedImage:@"btn_List.png" disabledImage:@"btn_List.png" target:self selector:@selector(touchList:)];
+    itemSong3 = [CCMenuItemLabelAndImage itemFromLabel:labelSong3 normalImage:@"btn_List.png" selectedImage:@"btn_List.png" disabledImage:@"btn_List.png" target:self selector:@selector(touchList:)];
+    itemSong4 = [CCMenuItemLabelAndImage itemFromLabel:labelSong4 normalImage:@"btn_List.png" selectedImage:@"btn_List.png" disabledImage:@"btn_List.png" target:self selector:@selector(touchList:)];
+    
+    menulist = [CCMenu menuWithItems:topList,itemSong1,itemSong2,itemSong3,itemSong4, nil];
+    
+    [menulist alignItemsVerticallyWithPadding:0.0f];
+    menulist.position = ccp(770, -37);
+    [menuListLayer addChild:menulist];
+
+
+}
+- (void) desplazaMenu: (CCMenuItem  *) menuItem
+
+{
+
+    if (isUp) {
+        id actionMove = [CCMoveTo actionWithDuration:0.5
+                                            position:ccp(0,0)
+                         ];
+         isUp=FALSE;
+        [menuListLayer runAction:[CCSequence actions:actionMove,nil]];
+
+    }
+    else
+    {
+       id actionMove = [CCMoveTo actionWithDuration:0.5
+                                            position:ccp(0,280)
+                         ];
+        isUp=TRUE;
+        
+        [menuListLayer runAction:[CCSequence actions:actionMove,nil]];
+
+    }
+    
+
+    
+    
+}
+
+- (void) touchList:  (id) sender
+{
+
+    itemSong1.tag=0;
+    itemSong2.tag=1;
+    itemSong3.tag=2;
+    itemSong4.tag=3;
+    gCurrentSong=[sender tag];
+    [self songTitle];
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
+
+
+    
+
+}
+
 - (void) Jugar: (CCMenuItem  *) menuItem
 
 {
@@ -176,15 +255,36 @@ bool wasPaused;
 
 -(void) discInIz
 {
-    CCSprite *disc2 = [CCSprite spriteWithFile:@"d7.png" ];
+    disc2 = [CCSprite spriteWithFile:@"d7.png" ];
     disc2.position = ccp(size.width+size.width/2,size.height/2);
     [discLayer addChild:disc2];
     
     
+    id add=[CCCallFunc actionWithTarget:self selector:@selector(addSprite)];
+    id remove=[CCCallFunc actionWithTarget:self selector:@selector(removeSprite)];
+    id actionMove = [CCMoveTo actionWithDuration:2
+                                        position:ccp(-size.width,0)
+                     ];
+    id delay=[CCDelayTime actionWithDuration:0.01];
+    
+    [discLayer runAction:[CCSequence actions:actionMove,remove,delay,add ,nil]];
+    
+    
+}
+
+-(void) removeSprite
+{
+    //[discLayer removeChild:disc cleanup:NO];
+    [discLayer removeAllChildrenWithCleanup:YES];
+
+}
+
+-(void) addSprite
+{
+
+    disc = [CCSprite spriteWithFile:@"d7.png" ];
     disc.position = ccp(size.width+size.width/2,size.height/2);
     [discLayer addChild:disc];
-    
-
 }
 
 
@@ -198,6 +298,7 @@ bool wasPaused;
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
         wasPaused=FALSE;
     }
+    [self discInIz];
     
     //CCSprite *disc2 = [CCSprite spriteWithFile:@"d7.png" ];
     //disc2.position = ccp(size.width+size.width/2,size.height/2);

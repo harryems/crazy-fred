@@ -37,7 +37,7 @@
     CCMenuItemImage *ba7 ;
     CCMenuItemImage *ba8 ;
     CCMenuItemImage *ba9 ;
-    
+    CCMenu *MenuRetrai ;
     
 }
 -(void) generaSecuencia;
