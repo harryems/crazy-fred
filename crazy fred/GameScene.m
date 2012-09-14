@@ -8,7 +8,8 @@
 #import "SimpleAudioEngine.h"
 #import "GameScene.h"
 #import "global.h"
-
+#import "FacebookScorer.h"
+ 
 int gCurrentSong;
 
 
@@ -62,6 +63,9 @@ int gCurrentSong;
         cortina.position = ccp(size.width/2,size.height/2);
         [gamecortinasLayer addChild:cortina];
         
+        
+        
+        
         [self addChild:backGroundLayer];
         [self addChild:instrumentosLayer];
         [self addChild:titleLayer];
@@ -78,7 +82,35 @@ int gCurrentSong;
         }
 	return self;
 }
+-(void)BuildSecuencia
+{
+    
+    
+    
+    switch (gCurrentSong) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
 
+        default:
+            break;
+    }
+    
+    
+}
+
+-(void)CpArray:(int *)origen :(int *)destino
+{
+    for (int i=0;i<=(sizeof(origen)/sizeof(int));i++)
+         {
+             destino[i]=origen[i];
+         }
+}
 
 
 -(void) avanzaAguja:(int)time{
@@ -141,8 +173,9 @@ int gCurrentSong;
         id cierra=[CCCallFunc actionWithTarget:self selector:@selector(cierreCortina)];
         id abre=[CCCallFunc actionWithTarget:self selector:@selector(abreCortinas)];
         id delay =[CCDelayTime actionWithDuration:3];
+        id music=[CCCallFunc actionWithTarget:self selector:@selector(resumenbackground)];
         
-        [self runAction:[CCSequence actions: cierra,delay,abre,nil]];
+        [self runAction:[CCSequence actions: cierra,delay,abre,music,nil]];
         internalPaso=0;
     
     }
@@ -211,7 +244,12 @@ int gCurrentSong;
     [[CCDirector sharedDirector] replaceScene:[MusicScene scene]];
     
 }
-
+-(void) Share:(CCMenuItem  *) menuItem
+{
+    
+    [[FacebookScorer sharedInstance] postToWallWithDialogNewHighscore:123];
+    
+}
 
 -(void) BuildRetrai
 {
@@ -221,6 +259,15 @@ int gCurrentSong;
     [gamecortinasLayer addChild:MenuRetrai];
 
 }
+-(void) BuilFaceShare
+{
+    CCMenuItemImage *btnJugar = [CCMenuItemImage itemFromNormalImage:@"facebook_button.png" selectedImage:@"facebook_button.png" target:self selector:@selector(Share:)];
+    MenuRetrai = [CCMenu menuWithItems:btnJugar, nil];
+    MenuRetrai.position =CGPointMake(size.width/2, 50);
+    [gamecortinasLayer addChild:MenuRetrai];
+    
+}
+
 
 -(void) cierreFinalCandados
 {
@@ -228,6 +275,7 @@ int gCurrentSong;
     switch (gResultado) {
         case 1:
             cortinaFinal = [CCSprite spriteWithFile:@"ganador.png" ];
+            [self BuilFaceShare];
             break;
         case 2:
             cortinaFinal = [CCSprite spriteWithFile:@"premio-intermedio.png" ];
@@ -293,6 +341,8 @@ int gCurrentSong;
 }
 
 
+
+
 - (void) touchButton: (id) sender
 {
  
@@ -307,10 +357,10 @@ int gCurrentSong;
     ba9.tag=9;
     
 
-    id pausa=[CCCallFunc actionWithTarget:self selector:@selector(pausebackground)];
-    id resumen=[CCCallFunc actionWithTarget:self selector:@selector(resumenbackground)];
-    id delayMusic=[CCDelayTime actionWithDuration:0.5];
-    [self runAction:[CCSequence actions:resumen,delayMusic,pausa,nil]];
+   // id pausa=[CCCallFunc actionWithTarget:self selector:@selector(pausebackground)];
+   // id resumen=[CCCallFunc actionWithTarget:self selector:@selector(resumenbackground)];
+   // id delayMusic=[CCDelayTime actionWithDuration:0.5];
+    //[self runAction:[CCSequence actions:resumen,delayMusic,pausa,nil]];
     
     
 

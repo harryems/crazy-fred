@@ -49,6 +49,7 @@ bool wasPaused;
         titleLayer= [CCLayer node];
         pauseLayer=[CCLayer node];
         menuListLayer=[CCLayer node];
+        franjaLayer=[CCLayer node];
 
 
         
@@ -56,6 +57,7 @@ bool wasPaused;
         [self addChild:backGroundLayer];
         [self addChild:discLayer];
         [self addChild:menuListLayer];
+        [self addChild:franjaLayer];
 
         [self addChild:controlsLayer];
         [self addChild:pauseLayer];
@@ -88,15 +90,6 @@ bool wasPaused;
     
 }
 
--(void) discIn
-
-{
-     
-    //[discSprite prepareAnimationNamed:@"DiscoIn" fromSHScene:@"DiscIn"];
-    
-
-
-}
 
 -(void) BuildPause
 {
@@ -147,6 +140,18 @@ bool wasPaused;
     [controlsLayer addChild:MenuJugar];
     
 }
+-(void)updatePausa
+{
+    
+    if ( [[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying]==TRUE) {
+        pauseLayer.visible=TRUE;
+
+    }
+    else
+        pauseLayer.visible=FALSE;
+
+}
+
 
 -(void) BuilMenu
 {
@@ -214,7 +219,7 @@ bool wasPaused;
     gCurrentSong=[sender tag];
     [self songTitle];
     [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
-
+    [self updatePausa];
 
     
 
@@ -238,6 +243,15 @@ bool wasPaused;
     [discLayer addChild:disc];
     
     
+    CCSprite *franja =[CCSprite spriteWithFile:@"franja.png"];
+    franja.position = ccp(size.width/2, size.height/2);
+    [franjaLayer addChild:franja];
+    
+    cortina = [CCSprite spriteWithFile:@"1.png" ];
+    cortina.position = ccp(size.width/2,size.height/2);
+    [cortinasLayer addChild:cortina];
+    
+    
 }
 
 - (void) Next: (CCMenuItem  *) menuItem
@@ -246,8 +260,9 @@ bool wasPaused;
     if (gCurrentSong>3)gCurrentSong=0;
     if (isplaying){
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
-        wasPaused=FALSE;
     }
+    [self updatePausa];
+
     [self songTitle];
     
     
@@ -255,27 +270,42 @@ bool wasPaused;
 
 -(void) discInIz
 {
-    disc2 = [CCSprite spriteWithFile:@"d7.png" ];
-    disc2.position = ccp(size.width+size.width/2,size.height/2);
-    [discLayer addChild:disc2];
+    id actionRecolocarDisco=[CCCallFunc actionWithTarget:self selector:@selector(recolocarDisco)];
+    id actionSacarDisco = [CCCallFunc actionWithTarget:self selector:@selector(sacarDisco)];
+    id actionEntraDisco = [CCCallFunc actionWithTarget:self selector:@selector(entraDisco)];
     
-    
-    id add=[CCCallFunc actionWithTarget:self selector:@selector(addSprite)];
-    id remove=[CCCallFunc actionWithTarget:self selector:@selector(removeSprite)];
-    id actionMove = [CCMoveTo actionWithDuration:2
-                                        position:ccp(-size.width,0)
-                     ];
-    id delay=[CCDelayTime actionWithDuration:0.01];
-    
-    [discLayer runAction:[CCSequence actions:actionMove,remove,delay,add ,nil]];
-    
+    [discLayer runAction:[CCSequence actions:actionSacarDisco,[CCDelayTime actionWithDuration:1.0],actionRecolocarDisco,actionEntraDisco, nil]];
+}
+
+-(void)sacarDisco{
+    disc.visible = YES;
+    [disc runAction:[CCMoveTo actionWithDuration:2 position:ccp(0-(size.width/2),size.height/2)]];
+}
+
+-(void) recolocarDisco
+{
+    disc.visible = NO;
+    disc.position = ccp(size.width,size.height/2);
+    [disc runAction:[CCMoveTo actionWithDuration:0 position:ccp(size.width,size.height/2)]];
+}
+
+
+-(void) entraDisco
+{
+    disc.visible = YES;
+    [disc runAction:[CCMoveTo actionWithDuration:2 position:ccp(size.width/2,size.height/2)]];
     
 }
 
 -(void) removeSprite
 {
     //[discLayer removeChild:disc cleanup:NO];
+    //[discLayer removeAllChildrenWithCleanup:YES];
+    
+    //[discLayer removeChild:disc cleanup:NO];
     [discLayer removeAllChildrenWithCleanup:YES];
+    discLayer.position = ccp( 0,0 );
+
 
 }
 
@@ -296,8 +326,9 @@ bool wasPaused;
     if (gCurrentSong<0)gCurrentSong=3;
     if (isplaying){
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:gSongs[gCurrentSong] ];
-        wasPaused=FALSE;
     }
+    [self updatePausa];
+
     [self discInIz];
     
     //CCSprite *disc2 = [CCSprite spriteWithFile:@"d7.png" ];
@@ -363,13 +394,16 @@ bool wasPaused;
     }
     pauseLayer.visible=TRUE;
     isplaying=true;
+    [self updatePausa];
+
 }
 - (void) Pause: (CCMenuItem  *) menuItem
 {
     [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
 
-    pauseLayer.visible=FALSE;
     wasPaused=TRUE;
+    [self updatePausa];
+
 }
 
 
@@ -385,9 +419,7 @@ bool wasPaused;
 
 - (void) gAbreCortinas
 {
-    CCSprite *cortina = [CCSprite spriteWithFile:@"1.png" ];
-    cortina.position = ccp(size.width/2,size.height/2);
-    [cortinasLayer addChild:cortina];
+
     
     id actionMove = [CCMoveTo actionWithDuration:2
                                         position:ccp(0,size.height+(size.height/2))

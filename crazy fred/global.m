@@ -35,12 +35,17 @@ float gTimingLevel[] =
   0.15
 };
 
+
+
 int gTopLevel[] ={
     2,
     10,
     15,
     20
 };
+
+
+
 
 int gResultado;
 

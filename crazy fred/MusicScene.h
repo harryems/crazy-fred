@@ -13,10 +13,11 @@
 @interface MusicScene : CCLayer {
 
     CCLayer *discLayer, * controlsLayer,*cortinasLayer, *backGroundLayer,*titleLayer,*pauseLayer,
-    *discLayerOut,*menuListLayer;
+    *discLayerOut,*menuListLayer, *franjaLayer;
     CCSprite *background;
     CCSprite *disc;
     CCSprite *disc2;
+    CCSprite *cortina;
     CCLabelTTF *labelTitle;
     
     CCLabelTTF *labelSong1;
