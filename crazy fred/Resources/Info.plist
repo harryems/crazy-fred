@@ -9,10 +9,8 @@
 			<string>141877335956938</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string></string>
+				<string>fb141877335956938</string>
 			</array>
-			<key>Item 0</key>
-			<string>fb141877335956938</string>
 		</dict>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>

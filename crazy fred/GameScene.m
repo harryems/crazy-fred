@@ -8,6 +8,7 @@
 #import "SimpleAudioEngine.h"
 #import "GameScene.h"
 #import "global.h"
+#import "FacebookScorer/FacebookScorer.h"
  
 int gCurrentSong;
 
@@ -81,27 +82,7 @@ int gCurrentSong;
         }
 	return self;
 }
--(void)BuildSecuencia
-{
-    
-    
-    
-    switch (gCurrentSong) {
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
 
-        default:
-            break;
-    }
-    
-    
-}
 
 -(void)CpArray:(int *)origen :(int *)destino
 {
@@ -114,19 +95,51 @@ int gCurrentSong;
 
 -(void) avanzaAguja{
 
-    [aguja runAction:[CCRotateBy  actionWithDuration:1 angle:160/gTopLevel[gCurrentSong]]];
+    [aguja runAction:[CCRotateBy  actionWithDuration:1 angle:170/gTopLevel[gCurrentSong]]];
     
 }
 
 
 -(void) generaSecuencia
 {
-    for( int i = 0; i < 100; ++i )
+    switch (gCurrentSong) {
+        case 0:
+            for( int i = 0; i < gTopLevel[gCurrentSong]; ++i )
+            {
+                [array addObject:[NSNumber numberWithInt:secuencia1[i]]];
+            }
+            break;
+        case 1:
+            for( int i = 0; i < gTopLevel[gCurrentSong]; ++i )
+            {
+                [array addObject:[NSNumber numberWithInt:secuencia2[i]]];
+            }
+            break;
+        case 2:
+            for( int i = 0; i < gTopLevel[gCurrentSong]; ++i )
+            {
+                [array addObject:[NSNumber numberWithInt:secuencia3[i]]];
+            }
+            break;
+            
+        case 3:
+            for( int i = 0; i < gTopLevel[gCurrentSong]; ++i )
+            {
+                [array addObject:[NSNumber numberWithInt:secuencia4[i]]];
+            }
+            break;
+        default:
+            break;
+    }
+    
+
+    
+   /* for( int i = 0; i < 100; ++i )
     {
         int temp= (arc4random() % 9) + 1;
         [array addObject:[NSNumber numberWithInt:temp]];
     }
-    
+    */
 }
 
 -(void) actualizaScore
@@ -141,9 +154,9 @@ int gCurrentSong;
   
 -(void)muestrasecuencia
 {
-    imuestra++;
+
   //  if (imuestra<=paso) {
-   if (imuestra<= gTopLevel[gCurrentSong])
+   if (imuestra< gTopLevel[gCurrentSong])
        {
         [[CCTouchDispatcher sharedDispatcher] setDispatchEvents:NO];  //mientras se muestra la secuencia el usuario no puede tocar los botones
         
@@ -179,7 +192,7 @@ int gCurrentSong;
     
     }
 
-
+    imuestra++;
 
     
     
@@ -245,6 +258,8 @@ int gCurrentSong;
 }
 -(void) Share:(CCMenuItem  *) menuItem
 {
+    [[FacebookScorer sharedInstance] postToWallWithDialogNewHighscore:gScore];
+
     
     
 }
@@ -363,13 +378,13 @@ int gCurrentSong;
     
 
 
-    int tmp=[[array objectAtIndex:internalPaso+1]integerValue];
+    int tmp=[[array objectAtIndex:internalPaso]integerValue];
 
 
     
         if( tmp != [sender tag ]  )
         {
-            if (internalPaso/gTopLevel[gCurrentSong] <0.55){
+            if ((100-internalPaso)/gTopLevel[gCurrentSong] <0.55){
                 gResultado=3;
             }
             else
@@ -466,6 +481,9 @@ int gCurrentSong;
     [instrumentosLayer addChild:Instrumentos];
     
 }
+
+
+
 
 - (void) dealloc
 {

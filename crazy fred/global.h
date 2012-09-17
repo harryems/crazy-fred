@@ -20,12 +20,12 @@ extern int gTopLevel[];
 extern int gResultado;
 
 //extern int *gSecuencias[][];
-extern int secuenciaTMP[];
+extern NSMutableArray *secuenciaTMP;
 
-extern NSMutableArray *secuencia1;
-extern NSMutableArray *secuencia2;
-extern NSMutableArray *secuencia3;
-extern NSMutableArray *secuencia4;
+extern int secuencia1[];
+extern int secuencia2[];
+extern int secuencia3[];
+extern int secuencia4[];
 
 
 extern NSMutableArray *secuencia;

@@ -10,6 +10,11 @@
 #import "cocos2d.h"
 #import "MusicScene.h"
 
+
+
+
+
+
 @interface GameScene : CCLayer {
     CCLayer *medidorLayer, * instrumentosLayer, *backGroundLayer,*gamecortinasLayer,*agujaLayer,*titleLayer,*gamecortinasFinal;
     CCSprite *background;
@@ -20,6 +25,12 @@
     CCLabelTTF *labelScore;
     CCLabelTTF *labelTitle;
     CCLabelTTF *labelCurrenScore;
+    
+    
+    
+
+
+    
     
     int count;
     int paso;
@@ -50,6 +61,9 @@
 -(void) muestraMarcador;
 -(void) BuildBackground;
 -(void) BuildInstrumentos;
+
+
+
 
 // returns a CCScene that contains the InitLayer as the only child
 +(CCScene *) scene;

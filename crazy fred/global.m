@@ -44,7 +44,10 @@ int gTopLevel[] ={
     20
 };
 
-
+int secuencia1[]={1,2,3,4,5,6,7};
+int secuencia2[]={1,2,3,4,5,6,7,8,9,1};
+int secuencia3[]={1,2,3,4,5,6,7,8,9,1,2,3,4,5,6};
+int secuencia4[]={1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2};
 
 
 int gResultado;
