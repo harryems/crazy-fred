@@ -1,63 +1,0 @@
-10
-
-dir
-0
-svn+ssh://arueda@ubar.csoft.net/home/arueda/csahrm/BOX/FacebookSDKResources.bundle
-svn+ssh://arueda@ubar.csoft.net/home/arueda/csahrm
-add
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4dac827d-47b4-e111-99d0-02e08123c9d6
-
-FBProfilePictureView
-dir
-
-
-
-add
-
-FBPlacePickerView
-dir
-
-
-
-add
-
-FBDialog
-dir
-
-
-
-add
-
-FBFriendPickerView
-dir
-
-
-
-add
-
-FBLoginView
-dir
-
-
-
-add
-
