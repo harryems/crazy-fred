@@ -8,6 +8,7 @@
 #import "SimpleAudioEngine.h"
 #import "GameScene.h"
 #import "global.h"
+#import "InitLayer.h"
 #import "FacebookScorer/FacebookScorer.h"
  
 int gCurrentSong;
@@ -256,6 +257,15 @@ int gCurrentSong;
     [[CCDirector sharedDirector] replaceScene:[MusicScene scene]];
     
 }
+
+
+-(void) ReplaceInicio:(CCMenuItem  *) menuItem
+{
+    
+    [[CCDirector sharedDirector] replaceScene:[InitLayer scene]];
+    
+}
+
 -(void) Share:(CCMenuItem  *) menuItem
 {
     [[FacebookScorer sharedInstance] postToWallWithDialogNewHighscore:gScore];
@@ -266,18 +276,31 @@ int gCurrentSong;
 
 -(void) BuildRetrai
 {
-    CCMenuItemImage *btnJugar = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png" selectedImage:@"btnjugar-over.png" target:self selector:@selector(Replace:)];
-    MenuRetrai = [CCMenu menuWithItems:btnJugar, nil];
+    count=1;
+    paso=1;
+    imuestra=0;
+    gScore=0;
+    CCMenuItemImage *btnRetrai = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png" selectedImage:@"btnjugar-over.png" target:self selector:@selector(Replace:)];
+    MenuRetrai = [CCMenu menuWithItems:btnRetrai, nil];
     MenuRetrai.position =CGPointMake(size.width/2, 50);
     [gamecortinasLayer addChild:MenuRetrai];
 
 }
+-(void) BuildFail
+{
+    CCMenuItemImage *btnFail = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png" selectedImage:@"btnjugar-over.png" target:self selector:@selector(ReplaceInicio:)];
+    CCMenu *MenuFail = [CCMenu menuWithItems:btnFail, nil];
+    MenuFail.position =CGPointMake(size.width/2, 50);
+    [gamecortinasLayer addChild:MenuFail];
+    
+}
+
 -(void) BuilFaceShare
 {
-    CCMenuItemImage *btnJugar = [CCMenuItemImage itemFromNormalImage:@"facebook_button.png" selectedImage:@"facebook_button.png" target:self selector:@selector(Share:)];
-    MenuRetrai = [CCMenu menuWithItems:btnJugar, nil];
-    MenuRetrai.position =CGPointMake(size.width/2, 50);
-    [gamecortinasLayer addChild:MenuRetrai];
+    CCMenuItemImage *btnShare = [CCMenuItemImage itemFromNormalImage:@"facebook_button.png" selectedImage:@"facebook_button.png" target:self selector:@selector(Share:)];
+    CCMenu *MenuShare = [CCMenu menuWithItems:btnShare, nil];
+    MenuShare.position =CGPointMake(size.width/2, 50);
+    [gamecortinasLayer addChild:MenuShare];
     
 }
 
@@ -296,7 +319,7 @@ int gCurrentSong;
             break;
         case 3:
             cortinaFinal = [CCSprite spriteWithFile:@"perdedor.png" ];
-            [self BuildRetrai];
+            [self BuildFail];
 
             
             break;
@@ -384,7 +407,7 @@ int gCurrentSong;
     
         if( tmp != [sender tag ]  )
         {
-            if ((100-internalPaso)/gTopLevel[gCurrentSong] <0.55){
+            if ((100*internalPaso)/gTopLevel[gCurrentSong] <55){
                 gResultado=3;
             }
             else

@@ -108,6 +108,7 @@
     textMail.backgroundColor=[UIColor whiteColor];
     [textMail setFont:[UIFont fontWithName:@"OCRAEXT" size:14]];
     textMail.adjustsFontSizeToFitWidth = YES;
+    textMail.keyboardType=UIKeyboardTypeEmailAddress;
     textMail.returnKeyType = UIReturnKeyDone;
 
 	WrapperMail = [CCUIViewWrapper wrapperForUIView:textMail];
@@ -118,6 +119,8 @@
     dia.backgroundColor=[UIColor whiteColor];
     [dia setFont:[UIFont fontWithName:@"OCRAEXT" size:14]];
     dia.adjustsFontSizeToFitWidth = YES;
+    dia.placeholder=@"DD";
+    dia.keyboardType=UIKeyboardTypeDecimalPad;
     dia.returnKeyType = UIReturnKeyDone;
 
 	WrapperDia = [CCUIViewWrapper wrapperForUIView:dia];
@@ -127,7 +130,10 @@
     mes=[[UITextField alloc]init];
     mes.backgroundColor=[UIColor whiteColor];
     [mes setFont:[UIFont fontWithName:@"OCRAEXT" size:14]];
+    mes.placeholder=@"MM";
+    mes.keyboardType=UIKeyboardTypeDecimalPad;
     mes.adjustsFontSizeToFitWidth = YES;
+    
     mes.returnKeyType = UIReturnKeyDone;
 
 	WrapperMes = [CCUIViewWrapper wrapperForUIView:mes];
@@ -138,7 +144,9 @@
     anio.backgroundColor=[UIColor whiteColor];
     [anio setFont:[UIFont fontWithName:@"OCRAEXT" size:14]];
     anio.adjustsFontSizeToFitWidth = YES;
+    anio.keyboardType=UIKeyboardTypeDecimalPad;
     anio.returnKeyType = UIReturnKeyDone;
+    anio.placeholder=@"AA";
 
 	WrapperAnio = [CCUIViewWrapper wrapperForUIView:anio];
     WrapperAnio.contentSize = CGSizeMake(40, 30);
@@ -154,7 +162,14 @@
     WrapperSend.contentSize = CGSizeMake(80, 30);
     WrapperSend.rotation=90;
 
+    datosButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	[datosButton addTarget:self action:@selector(enviarDatos:) forControlEvents:UIControlEventTouchDown];
+    //sendButton.backgroundColor=[UIColor whiteColor];
+    datosButton.opaque=FALSE;
     
+    WrapperDatos = [CCUIViewWrapper wrapperForUIView:datosButton];
+    WrapperDatos.contentSize = CGSizeMake(40, 30);
+    WrapperDatos.rotation=90;
     
     
     WrapperName.position=ccp(208, size.height/2);
@@ -198,7 +213,9 @@
         //registroContenedor.hidden = YES;
         
         //mostrarFlechas = true;
-        [self enviarDatos];
+        //[self enviarDatos];
+        [self cierraCortinas];
+        
     }
 }
 
@@ -218,7 +235,7 @@
     [emailpicker setMessageBody:emailBody isHTML:NO];
     
     
-    [self cierraCortinas];
+
     //[self presentModalViewController:emailpicker animated:YES];
     
 }

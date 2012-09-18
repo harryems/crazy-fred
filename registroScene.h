@@ -25,8 +25,10 @@
     UITextField     *mes;
     UITextField     *anio;
     UIButton        *sendButton;
+    UIButton        *datosButton;
     
     CCUIViewWrapper *WrapperSend;
+     CCUIViewWrapper *WrapperDatos;
     CCUIViewWrapper *WrapperName;
     CCUIViewWrapper *WrapperMail;
     CCUIViewWrapper *WrapperDia;
