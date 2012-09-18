@@ -25,7 +25,6 @@
 		D14BB95116078B40004D787F /* btn_List.png in Resources */ = {isa = PBXBuildFile; fileRef = D14BB95016078B40004D787F /* btn_List.png */; };
 		D14BB95416078B7E004D787F /* registroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D14BB95316078B7E004D787F /* registroScene.m */; };
 		D14BB95616078D29004D787F /* registro-app.png in Resources */ = {isa = PBXBuildFile; fileRef = D14BB95516078D29004D787F /* registro-app.png */; };
-		D14BB95E1607A94E004D787F /* Register.xib in Resources */ = {isa = PBXBuildFile; fileRef = D14BB95D1607A94E004D787F /* Register.xib */; };
 		D14BB9651607B61F004D787F /* CCUIViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D14BB9641607B61D004D787F /* CCUIViewWrapper.m */; };
 		D14BB9981607F31E004D787F /* barra-inferior-demo.png in Resources */ = {isa = PBXBuildFile; fileRef = D14BB9961607F318004D787F /* barra-inferior-demo.png */; };
 		D14BB9991607F31E004D787F /* barra-inferior.png in Resources */ = {isa = PBXBuildFile; fileRef = D14BB9971607F31C004D787F /* barra-inferior.png */; };
@@ -266,7 +265,6 @@
 		D14BB95216078B7D004D787F /* registroScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = registroScene.h; path = ../registroScene.h; sourceTree = "<group>"; };
 		D14BB95316078B7E004D787F /* registroScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = registroScene.m; path = ../registroScene.m; sourceTree = "<group>"; };
 		D14BB95516078D29004D787F /* registro-app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registro-app.png"; sourceTree = "<group>"; };
-		D14BB95D1607A94E004D787F /* Register.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Register.xib; sourceTree = "<group>"; };
 		D14BB9631607B61B004D787F /* CCUIViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUIViewWrapper.h; path = ../CCUIViewWrapper.h; sourceTree = "<group>"; };
 		D14BB9641607B61D004D787F /* CCUIViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCUIViewWrapper.m; path = ../CCUIViewWrapper.m; sourceTree = "<group>"; };
 		D14BB9961607F318004D787F /* barra-inferior-demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barra-inferior-demo.png"; sourceTree = "<group>"; };
@@ -821,7 +819,6 @@
 		D16AD7DB15F6775600F9CF19 = {
 			isa = PBXGroup;
 			children = (
-				D14BB95D1607A94E004D787F /* Register.xib */,
 				D16AD7FA15F6775600F9CF19 /* crazy fred */,
 				D16AD7E915F6775600F9CF19 /* Frameworks */,
 				D16AD7E715F6775600F9CF19 /* Products */,
@@ -1368,7 +1365,6 @@
 				D14BB94B16078382004D787F /* btn_track.png in Resources */,
 				D14BB95116078B40004D787F /* btn_List.png in Resources */,
 				D14BB95616078D29004D787F /* registro-app.png in Resources */,
-				D14BB95E1607A94E004D787F /* Register.xib in Resources */,
 				D14BB9981607F31E004D787F /* barra-inferior-demo.png in Resources */,
 				D14BB9991607F31E004D787F /* barra-inferior.png in Resources */,
 				D14BB99D16080426004D787F /* cuadro.png in Resources */,

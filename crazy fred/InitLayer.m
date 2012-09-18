@@ -124,8 +124,8 @@
 -(void) Replace
 {
     
-   [[CCDirector sharedDirector] replaceScene:[MusicScene scene]];
-   // [[CCDirector sharedDirector] replaceScene:[registroScene scene]];
+   //[[CCDirector sharedDirector] replaceScene:[MusicScene scene]];
+    [[CCDirector sharedDirector] replaceScene:[registroScene scene]];
 }
 
 
