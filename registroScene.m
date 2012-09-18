@@ -101,7 +101,7 @@
     id done=[CCCallFunc actionWithTarget:self selector:@selector(VisibleInputs)];
     
     
-    [cortinasLayer runAction:[CCSequence actions:actionMove,[CCDelayTime actionWithDuration:2],done,nil]];
+    [cortinasLayer runAction:[CCSequence actions:actionMove,done,nil]];
 
 }
 -(void)VisibleInputs
@@ -117,12 +117,18 @@
 -(void)BuildInputs
 {
 
+    //registroContenedor = [CCUIViewWrapper];
+    registroContenedor	= [[[UIView alloc] init] autorelease];
+    CCUIViewWrapper *wrapper = [CCUIViewWrapper wrapperForUIView:registroContenedor];
+    
     textName=[[UITextField alloc]init];
     textName.backgroundColor=[UIColor whiteColor];
     [textName setFont:[UIFont fontWithName:@"OCRAEXT" size:14]];
     textName.adjustsFontSizeToFitWidth = YES;
     textName.returnKeyType = UIReturnKeyDone;
+    //textName.inputAccessoryView=[self textFieldShouldBeginEditing];
 	WrapperName = [CCUIViewWrapper wrapperForUIView:textName];
+    
     WrapperName.contentSize = CGSizeMake(250, 30);
     WrapperName.rotation=90;
    
@@ -209,7 +215,6 @@
 	[inputsLayer addChild:WrapperMail];
     [inputsLayer addChild:WrapperSend];
     
-     [textName release];
     
     
     
@@ -240,8 +245,14 @@
     
     
 }
-/*
+
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+ 
+     if( textField == textName ){
+         
+     }
+    
+    /*
     if( textField == textName ){
         [UIView animateWithDuration:0.5 delay:0.0 options: UIViewAnimationCurveEaseOut
                          animations:^{
@@ -277,9 +288,11 @@
         return NO;
         
     }
+     */
     return YES;
+     
 }
-*/
+
 
 /*
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

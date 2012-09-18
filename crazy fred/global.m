@@ -28,10 +28,10 @@ NSString* gTitles[] =
 };
 
 NSString  *gDisplaySongs[] =
-{   @"Guns & Rouses-Cancion",
-    @"Interprete-Infected mushrums",
-    @"red hot chilli pepper-Cancion",
-    @"ac:dc-Cancion"
+{   @"Guns & Rousesn",
+    @"Infected mushrums",
+    @"red hot chilli pepper",
+    @"ac:dc"
 };
 
 float gTimingLevel[] =

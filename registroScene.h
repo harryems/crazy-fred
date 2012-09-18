@@ -19,7 +19,7 @@
     CCSprite *backCortina;
     CGSize size;
     
-    
+    UIView *registroContenedor;
     UITextField     *textName;
     UITextField     *textMail;
     UITextField     *dia;
@@ -51,7 +51,7 @@
 
 
 }
-
+- (BOOL)textFieldShouldBeginEditing;
 -(void) BuildBackground;
 -(void) BuildInputs;
 -(void) abreCortinas;

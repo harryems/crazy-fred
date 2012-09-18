@@ -101,7 +101,6 @@
 		D1637C7315F717E50097AFB5 /* M1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C2F15F717E50097AFB5 /* M1.png */; };
 		D1637C7415F717E50097AFB5 /* M2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C3015F717E50097AFB5 /* M2.png */; };
 		D1637C7F15F729E70097AFB5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C7E15F729E70097AFB5 /* Default.png */; };
-		D1637C9515F745210097AFB5 /* accesoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637C9415F745210097AFB5 /* accesoLayer.m */; };
 		D1637C9D15F74FAD0097AFB5 /* registro.png in Resources */ = {isa = PBXBuildFile; fileRef = D1637C9C15F74FAD0097AFB5 /* registro.png */; };
 		D1637CA015F7503F0097AFB5 /* MusicScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637C9F15F7503E0097AFB5 /* MusicScene.m */; };
 		D1637CA315F750610097AFB5 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D1637CA215F750600097AFB5 /* GameScene.m */; };
@@ -342,8 +341,6 @@
 		D1637C2F15F717E50097AFB5 /* M1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M1.png; sourceTree = "<group>"; };
 		D1637C3015F717E50097AFB5 /* M2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M2.png; sourceTree = "<group>"; };
 		D1637C7E15F729E70097AFB5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D1637C9315F745210097AFB5 /* accesoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accesoLayer.h; sourceTree = "<group>"; };
-		D1637C9415F745210097AFB5 /* accesoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accesoLayer.m; sourceTree = "<group>"; };
 		D1637C9C15F74FAD0097AFB5 /* registro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registro.png; sourceTree = "<group>"; };
 		D1637C9E15F7503E0097AFB5 /* MusicScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicScene.h; sourceTree = "<group>"; };
 		D1637C9F15F7503E0097AFB5 /* MusicScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicScene.m; sourceTree = "<group>"; };
@@ -853,10 +850,6 @@
 			isa = PBXGroup;
 			children = (
 				D14BB9191606C137004D787F /* FacebookScorer */,
-				D14BB9161606BCBA004D787F /* CCMenuItemLabelAndImage.h */,
-				D14BB9171606BCBA004D787F /* CCMenuItemLabelAndImage.m */,
-				D14BB9631607B61B004D787F /* CCUIViewWrapper.h */,
-				D14BB9641607B61D004D787F /* CCUIViewWrapper.m */,
 				D1C29C1515FC4854000FB7C0 /* global.h */,
 				D1C29C1615FC4855000FB7C0 /* global.m */,
 				D16AD94C15F6775C00F9CF19 /* AppDelegate.h */,
@@ -871,8 +864,6 @@
 				D1637C9F15F7503E0097AFB5 /* MusicScene.m */,
 				D16AD95215F6775C00F9CF19 /* InitLayer.h */,
 				D16AD95315F6775C00F9CF19 /* InitLayer.m */,
-				D1637C9315F745210097AFB5 /* accesoLayer.h */,
-				D1637C9415F745210097AFB5 /* accesoLayer.m */,
 				D16AD95515F6775C00F9CF19 /* Config.h */,
 				D16AD7FB15F6775600F9CF19 /* Resources */,
 				D16AD80F15F6775700F9CF19 /* libs */,
@@ -906,6 +897,10 @@
 		D16AD80F15F6775700F9CF19 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				D14BB9161606BCBA004D787F /* CCMenuItemLabelAndImage.h */,
+				D14BB9171606BCBA004D787F /* CCMenuItemLabelAndImage.m */,
+				D14BB9631607B61B004D787F /* CCUIViewWrapper.h */,
+				D14BB9641607B61D004D787F /* CCUIViewWrapper.m */,
 				D16AD90515F6775B00F9CF19 /* LICENSE_cocos2d.txt */,
 				D16AD91415F6775B00F9CF19 /* LICENSE_CocosDenshion.txt */,
 				D16AD91F15F6775B00F9CF19 /* LICENSE_TouchJSON.txt */,
@@ -1476,7 +1471,6 @@
 				D16AD94E15F6775C00F9CF19 /* AppDelegate.m in Sources */,
 				D16AD95115F6775C00F9CF19 /* RootViewController.m in Sources */,
 				D16AD95415F6775C00F9CF19 /* InitLayer.m in Sources */,
-				D1637C9515F745210097AFB5 /* accesoLayer.m in Sources */,
 				D1637CA015F7503F0097AFB5 /* MusicScene.m in Sources */,
 				D1637CA315F750610097AFB5 /* GameScene.m in Sources */,
 				D1C29C1715FC4856000FB7C0 /* global.m in Sources */,
