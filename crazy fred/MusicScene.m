@@ -100,7 +100,7 @@ bool wasPaused;
     
     CCMenu *menuPausa = [CCMenu menuWithItems:Pas,nil];
 
-    menuPausa.position =CGPointMake(810, 30);
+    menuPausa.position =CGPointMake(785, 30);
     
     [pauseLayer addChild:menuPausa];
     
@@ -119,8 +119,8 @@ bool wasPaused;
     
     CCMenu *MenuReproduccion = [CCMenu menuWithItems:btnPlay,btnPrev,btnNext,nil];
     
-    [MenuReproduccion alignItemsHorizontally];
-     MenuReproduccion.position =CGPointMake(size.width - 150, 30);
+    [MenuReproduccion alignItemsHorizontallyWithPadding:20];
+     MenuReproduccion.position =CGPointMake(size.width - 160, 30);
     
 
     
@@ -129,9 +129,16 @@ bool wasPaused;
     
     CCMenu *MenuJugar = [CCMenu menuWithItems:btnJugar, nil];
     
-    MenuJugar.position =CGPointMake(200, 30);
+    MenuJugar.position =CGPointMake(230, 30);
+    
     labelTitle = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:20];
+    labelTitle.color=ccc3(0, 255, 0);
     labelTitle.position =  ccp(size.width / 2 , 30);
+    
+    CCSprite *cuadro =[CCSprite spriteWithFile:@"cuadro.png"];
+    cuadro.position=ccp(size.width / 2 , 30);
+
+    [controlsLayer addChild:cuadro];
 
     
     [titleLayer addChild:labelTitle];
@@ -149,7 +156,29 @@ bool wasPaused;
 
     }
     else
-        pauseLayer.visible=FALSE;
+    pauseLayer.visible=FALSE;
+    labelSong1.color=ccc3(0,0,0);
+    labelSong2.color=ccc3(0,0,0);
+    labelSong3.color=ccc3(0,0,0);
+    labelSong4.color=ccc3(0,0,0);
+    
+    switch (gCurrentSong) {
+        case 0:
+            labelSong1.color=ccc3(0, 255, 0);
+            break;
+        case 1:
+            labelSong2.color=ccc3(0, 255, 0);
+            break;
+        case 2:
+            labelSong3.color=ccc3(0, 255, 0);
+            break;
+        case 3:
+            labelSong4.color=ccc3(0, 255, 0);
+            break;
+        default:
+            break;
+    }
+    
 
 }
 
@@ -177,7 +206,7 @@ bool wasPaused;
     menulist = [CCMenu menuWithItems:topList,itemSong1,itemSong2,itemSong3,itemSong4, nil];
     
     [menulist alignItemsVerticallyWithPadding:0.0f];
-    menulist.position = ccp(770, -37);
+    menulist.position = ccp(820, -9);
     [menuListLayer addChild:menulist];
 
 
@@ -197,7 +226,7 @@ bool wasPaused;
     else
     {
        id actionMove = [CCMoveTo actionWithDuration:0.5
-                                            position:ccp(0,280)
+                                            position:ccp(0,210)
                          ];
         isUp=TRUE;
         
@@ -356,26 +385,6 @@ bool wasPaused;
 }
 
 
-
--(void) removeSprite
-{
-    //[discLayer removeChild:disc cleanup:NO];
-    //[discLayer removeAllChildrenWithCleanup:YES];
-    
-    //[discLayer removeChild:disc cleanup:NO];
-    [discLayer removeAllChildrenWithCleanup:YES];
-    discLayer.position = ccp( 0,0 );
-
-
-}
-
--(void) addSprite
-{
-
-    disc = [CCSprite spriteWithFile:@"d7.png" ];
-    disc.position = ccp(size.width+size.width/2,size.height/2);
-    [discLayer addChild:disc];
-}
 
 
 - (void) Play: (CCMenuItem  *) menuItem

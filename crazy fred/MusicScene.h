@@ -30,6 +30,8 @@
     CCMenuItemLabelAndImage *itemSong3;
     CCMenuItemLabelAndImage *itemSong4;
     
+    
+    
     CCMenu *menulist;
     bool isUp;
     

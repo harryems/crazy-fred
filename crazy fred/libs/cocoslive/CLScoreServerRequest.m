@@ -32,6 +32,7 @@
 #import "CLScoreServerPost.h"
 #import "CLScoreServerRequest.h"
 #import "ccMacros.h"
+#include <CoreFoundation/CFUUID.h>
 
 @implementation CLScoreServerRequest
 

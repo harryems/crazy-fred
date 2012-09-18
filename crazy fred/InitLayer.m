@@ -10,6 +10,7 @@
 // Import the interfaces
 #import "InitLayer.h"
 #import "MusicScene.h"
+#import "registroScene.h"
 
 
 // InitLayer implementation
@@ -123,8 +124,8 @@
 -(void) Replace
 {
     
-    [[CCDirector sharedDirector] replaceScene:[MusicScene scene]];
-    
+   //[[CCDirector sharedDirector] replaceScene:[MusicScene scene]];
+    [[CCDirector sharedDirector] replaceScene:[registroScene scene]];
 }
 
 
