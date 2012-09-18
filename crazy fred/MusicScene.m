@@ -186,10 +186,10 @@ bool wasPaused;
 -(void) BuilMenu
 {
     
-    labelSong1 = [CCLabelTTF labelWithString:gTitles[0] fontName:@"OCRAEXT" fontSize:30];
-    labelSong2 = [CCLabelTTF labelWithString:gTitles[1] fontName:@"OCRAEXT" fontSize:30];
-    labelSong3 = [CCLabelTTF labelWithString:gTitles[2] fontName:@"OCRAEXT" fontSize:30];
-    labelSong4 = [CCLabelTTF labelWithString:gTitles[3] fontName:@"OCRAEXT" fontSize:30];
+    labelSong1 = [CCLabelTTF labelWithString:gTitles[0] fontName:@"OCRAEXT" fontSize:15];
+    labelSong2 = [CCLabelTTF labelWithString:gTitles[1] fontName:@"OCRAEXT" fontSize:15];
+    labelSong3 = [CCLabelTTF labelWithString:gTitles[2] fontName:@"OCRAEXT" fontSize:15];
+    labelSong4 = [CCLabelTTF labelWithString:gTitles[3] fontName:@"OCRAEXT" fontSize:15];
 
     [labelSong1 setColor:ccBLACK];
     [labelSong2 setColor:ccBLACK];

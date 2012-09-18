@@ -41,6 +41,7 @@
         
         cortinasLayer= [CCLayer node];
         backGroundLayer= [CCLayer node];
+        backGroundCortina= [CCLayer node];
         inputsLayer= [CCLayer node];
 
         
@@ -48,18 +49,28 @@
         cortina.position = ccp(size.width/2,size.height/2);
         [cortinasLayer addChild:cortina];
         
+        backCortina= [CCSprite spriteWithFile:@"1.png"];
+        backCortina.position = ccp(size.width/2,size.height/2);
+        [backGroundCortina addChild:backCortina];
         
         
         
+        [self addChild:backGroundCortina];
         [self addChild:backGroundLayer];
         [self addChild:inputsLayer];
         [self addChild:cortinasLayer];
 
-
+        [self BuildInputs];
+        
+        textName.hidden=YES;
+        textMail.hidden=YES;
+        dia.hidden=YES;
+        mes.hidden=YES;
+        anio.hidden=YES;
         
         [self BuildBackground];
         [self abreCortinas];
-        [self BuildInputs];
+
 
     }
 	return self;
@@ -87,9 +98,20 @@
     id actionMove = [CCMoveTo actionWithDuration:2
                                         position:ccp(0,size.height+(size.height/2))
                      ];
-    [cortinasLayer runAction:[CCSequence actions:actionMove,nil]];
-}
+    id done=[CCCallFunc actionWithTarget:self selector:@selector(VisibleInputs)];
+    
+    
+    [cortinasLayer runAction:[CCSequence actions:actionMove,[CCDelayTime actionWithDuration:2],done,nil]];
 
+}
+-(void)VisibleInputs
+{
+    textName.hidden=NO;
+    textMail.hidden=NO;
+    dia.hidden=NO;
+    mes.hidden=NO;
+    anio.hidden=NO;
+}
 
 
 -(void)BuildInputs
@@ -186,7 +208,97 @@
 	[inputsLayer addChild:WrapperAnio];
 	[inputsLayer addChild:WrapperMail];
     [inputsLayer addChild:WrapperSend];
+    
+     [textName release];
+    
+    
+    
+    diasArray = [[NSMutableArray alloc] init];
+    for( int d = 1; d <= 31; d++){
+        if( d < 10){
+            [diasArray addObject:[NSString stringWithFormat:@"0%i",d]];
+        }else{
+            [diasArray addObject:[NSString stringWithFormat:@"%i",d]];
+        }
+        
+    }
+    
+    mesesArray = [[NSMutableArray alloc] init];
+    for( int m = 1; m <= 12; m++){
+        if( m < 10){
+            [mesesArray addObject:[NSString stringWithFormat:@"0%i",m]];
+        }else{
+            [mesesArray addObject:[NSString stringWithFormat:@"%i",m]];
+        }
+    }
+    
+    aniosArray = [[NSMutableArray alloc] init];
+    for( int a = 1994; a >= 1912; a --){
+        [aniosArray addObject:[NSString stringWithFormat:@"%i",a]];
+    }
+    
+    
+    
 }
+/*
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if( textField == textName ){
+        [UIView animateWithDuration:0.5 delay:0.0 options: UIViewAnimationCurveEaseOut
+                         animations:^{
+                             CGRect moverFrame = registroContenedor.frame;
+                             moverFrame.origin.y = -100;
+                             registroContenedor.frame = moverFrame;
+                         }
+                         completion:^(BOOL finished){
+                             
+                         }];
+    }
+    if( textField == textMail ){
+        [UIView animateWithDuration:0.5 delay:0.0 options: UIViewAnimationCurveEaseOut
+                         animations:^{
+                             CGRect moverFrame = registroContenedor.frame;
+                             moverFrame.origin.y = -280;
+                             registroContenedor.frame = moverFrame;
+                         }
+                         completion:^(BOOL finished){
+                             
+                         }];
+    }
+    if( textField == dia ){
+        [self.view addSubview:diasPickerView];
+        return NO;
+    }
+    if( textField == mes ){
+        [self.view addSubview:mesesPickerView];
+        return NO;
+    }
+    if( textField == anio ){
+        [self.view addSubview:aniosPickerView];
+        return NO;
+        
+    }
+    return YES;
+}
+*/
+
+/*
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    [UIView animateWithDuration:0.5 delay:0.0 options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         CGRect moverFrame = registroContenedor.frame;
+                         moverFrame.origin.y = 0;
+                         
+                         registroContenedor.frame = moverFrame;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    
+    return NO;
+}
+*/
 
 -(IBAction) validarRegistro:(id)sender{
     if( textName.text.length <= 0 ||
@@ -214,7 +326,17 @@
         
         //mostrarFlechas = true;
         //[self enviarDatos];
+        textName.hidden=YES;
+        textMail.hidden=YES;
+        dia.hidden=YES;
+        mes.hidden=YES;
+        anio.hidden=YES;
+        
+        
+       
+         [usuariosRegistrados addObject:usuario];
         [self cierraCortinas];
+        
         
     }
 }
@@ -254,7 +376,7 @@
             
             break;
         case MFMailComposeResultSent:
-            alert = [[UIAlertView alloc] initWithTitle:@"TECATE"
+            alert = [[UIAlertView alloc] initWithTitle:@"Crazy Fred"
                                                message:@"Base de datos Enviada Correctamente"
                                               delegate:nil
                                      cancelButtonTitle:@"OK"
@@ -290,7 +412,6 @@
 {
     
     [[CCDirector sharedDirector] replaceScene:[MusicScene scene]];
-    //[[CCDirector sharedDirector] replaceScene:[registroScene scene]];
 }
 - (void) dealloc
 {

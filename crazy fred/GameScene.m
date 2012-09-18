@@ -298,7 +298,11 @@ int gCurrentSong;
 -(void) BuilFaceShare
 {
     CCMenuItemImage *btnShare = [CCMenuItemImage itemFromNormalImage:@"facebook_button.png" selectedImage:@"facebook_button.png" target:self selector:@selector(Share:)];
-    CCMenu *MenuShare = [CCMenu menuWithItems:btnShare, nil];
+    CCMenuItemImage *btnAgain = [CCMenuItemImage itemFromNormalImage:@"btnjugar-on.png" selectedImage:@"btnjugar-over.png" target:self selector:@selector(ReplaceInicio:)];
+    
+    
+    CCMenu *MenuShare = [CCMenu menuWithItems:btnShare,btnAgain, nil];
+    [MenuShare alignItemsHorizontallyWithPadding:30];
     MenuShare.position =CGPointMake(size.width/2, 50);
     [gamecortinasLayer addChild:MenuShare];
     

@@ -13,9 +13,10 @@
 #import "cocos2d.h"
 
 @interface registroScene : CCLayer {
-    CCLayer *inputsLayer, *backGroundLayer,*cortinasLayer;
+    CCLayer *inputsLayer, *backGroundLayer,*cortinasLayer, *backGroundCortina;
     CCSprite *background;
     CCSprite *cortina;
+    CCSprite *backCortina;
     CGSize size;
     
     
@@ -26,6 +27,15 @@
     UITextField     *anio;
     UIButton        *sendButton;
     UIButton        *datosButton;
+    
+    UIPickerView *pickerDia;
+    UIPickerView *pickerMes;
+    UIPickerView *pickerAnio;
+
+    
+    NSMutableArray* diasArray;
+    NSMutableArray* mesesArray;
+    NSMutableArray* aniosArray;
     
     CCUIViewWrapper *WrapperSend;
      CCUIViewWrapper *WrapperDatos;

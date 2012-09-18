@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "registroScene.m"
-         timestampString = "369668555.177271"
+         timestampString = "369674080.863568"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "192"
-         endingLineNumber = "192"
+         startingLineNumber = "237"
+         endingLineNumber = "237"
          landmarkName = "-validarRegistro:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -236,6 +236,19 @@
          endingLineNumber = "310"
          landmarkName = "-cierreFinalCandados"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "crazy fred/main.m"
+         timestampString = "369671950.162004"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "14"
+         endingLineNumber = "14"
+         landmarkName = "main()"
+         landmarkType = "7">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
