@@ -29,9 +29,9 @@
 static NSString* kAppId= @"141877335956938"; // Your Facebook app ID here
 
 #define kAppName        @"Crayz Fred"
-#define kCustomMessage  @"Compartiendo con INDIO Y TUS AMIGOS"
+#define kCustomMessage  @"compartiendo con INDIO Y TUS AMIGOS"
 #define kServerLink     @"http://kreativeco.com"
-#define kImageSrc       @"http://indiedevstories.files.wordpress.com/2011/08/newsokoban_icon.png"
+#define kImageSrc       @"http://kreativeco.com/fabulos/pantallas/disc/d7.png"
 
 @implementation FacebookScorer
 

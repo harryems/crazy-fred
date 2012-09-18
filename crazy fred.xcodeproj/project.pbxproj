@@ -215,6 +215,7 @@
 		D16AD94E15F6775C00F9CF19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D16AD94D15F6775C00F9CF19 /* AppDelegate.m */; };
 		D16AD95115F6775C00F9CF19 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D16AD95015F6775C00F9CF19 /* RootViewController.m */; };
 		D16AD95415F6775C00F9CF19 /* InitLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D16AD95315F6775C00F9CF19 /* InitLayer.m */; };
+		D1AA858F1608F226009B0B2E /* logoIndio.png in Resources */ = {isa = PBXBuildFile; fileRef = D1AA858E1608F226009B0B2E /* logoIndio.png */; };
 		D1BE04581601C962008753CD /* flecha1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1BE04571601C962008753CD /* flecha1.png */; };
 		D1C29C0615FA9AE5000FB7C0 /* OCRAEXT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D1C29C0415FA9AE5000FB7C0 /* OCRAEXT.TTF */; };
 		D1C29C0715FA9AE5000FB7C0 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1C29C0515FA9AE5000FB7C0 /* OCRAStd.otf */; };
@@ -577,6 +578,7 @@
 		D16AD95215F6775C00F9CF19 /* InitLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitLayer.h; sourceTree = "<group>"; };
 		D16AD95315F6775C00F9CF19 /* InitLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitLayer.m; sourceTree = "<group>"; };
 		D16AD95515F6775C00F9CF19 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		D1AA858E1608F226009B0B2E /* logoIndio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoIndio.png; sourceTree = "<group>"; };
 		D1BE04571601C962008753CD /* flecha1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flecha1.png; sourceTree = "<group>"; };
 		D1C29C0415FA9AE5000FB7C0 /* OCRAEXT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAEXT.TTF; sourceTree = "<group>"; };
 		D1C29C0515FA9AE5000FB7C0 /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAStd.otf; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 		D1637B9D15F703F40097AFB5 /* inicio */ = {
 			isa = PBXGroup;
 			children = (
+				D1AA858E1608F226009B0B2E /* logoIndio.png */,
 				D1637B9F15F703F40097AFB5 /* btnjugar-on.png */,
 				D1637BA015F703F40097AFB5 /* btnjugar-over.png */,
 				D1637BA115F703F40097AFB5 /* h1.png */,
@@ -1363,6 +1366,7 @@
 				D14BB9981607F31E004D787F /* barra-inferior-demo.png in Resources */,
 				D14BB9991607F31E004D787F /* barra-inferior.png in Resources */,
 				D14BB99D16080426004D787F /* cuadro.png in Resources */,
+				D1AA858F1608F226009B0B2E /* logoIndio.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
