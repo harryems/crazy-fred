@@ -131,8 +131,8 @@ bool wasPaused;
     
     MenuJugar.position =CGPointMake(230, 30);
     
-    labelTitle = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:20];
-    labelTitle.color=ccc3(0, 255, 0);
+    labelTitle = [CCLabelTTF labelWithString:gDisplaySongs[gCurrentSong] fontName:@"OCRAEXT" fontSize:20];
+    labelTitle.color=ccc3(25, 169, 19);
     labelTitle.position =  ccp(size.width / 2 , 30);
     
     CCSprite *cuadro =[CCSprite spriteWithFile:@"cuadro.png"];
@@ -164,16 +164,16 @@ bool wasPaused;
     
     switch (gCurrentSong) {
         case 0:
-            labelSong1.color=ccc3(0, 255, 0);
+            labelSong1.color=ccc3(25, 169, 19);
             break;
         case 1:
-            labelSong2.color=ccc3(0, 255, 0);
+            labelSong2.color=ccc3(25, 169, 19);
             break;
         case 2:
-            labelSong3.color=ccc3(0, 255, 0);
+            labelSong3.color=ccc3(25, 169, 19);
             break;
         case 3:
-            labelSong4.color=ccc3(0, 255, 0);
+            labelSong4.color=ccc3(25, 169, 19);
             break;
         default:
             break;

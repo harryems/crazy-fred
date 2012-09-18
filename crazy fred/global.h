@@ -13,6 +13,7 @@ extern int gCurrentSong;
 //extern NSArray *gSongs;
 extern NSString* gSongs[];
 extern NSString* gTitles[];
+extern NSString* gDisplaySongs[];
 extern NSString *gCTitle;
 extern float gScore;
 extern float gTimingLevel[];

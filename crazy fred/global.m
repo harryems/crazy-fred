@@ -27,6 +27,13 @@ NSString* gTitles[] =
     @"ac:dc"
 };
 
+NSString  *gDisplaySongs[] =
+{   @"Guns & Rouses-Cancion",
+    @"Interprete-Infected mushrums",
+    @"red hot chilli pepper-Cancion",
+    @"ac:dc-Cancion"
+};
+
 float gTimingLevel[] =
 {
   1.0,

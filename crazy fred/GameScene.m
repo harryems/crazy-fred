@@ -455,7 +455,8 @@ int gCurrentSong;
     labelScore.position =  ccp(size.width / 2 , 30);
 
     
-    labelTitle = [CCLabelTTF labelWithString:gTitles[gCurrentSong] fontName:@"OCRAEXT" fontSize:16];
+    labelTitle = [CCLabelTTF labelWithString:gDisplaySongs[gCurrentSong] fontName:@"OCRAEXT" fontSize:16];
+    labelTitle.color=ccc3(25, 169, 19);
     [titleLayer addChild:labelTitle];
     labelTitle.position =  ccp(size.width / 2 , 30);
     
